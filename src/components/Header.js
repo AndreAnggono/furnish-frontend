@@ -1,33 +1,36 @@
+import React from "react";
 
 function Header() {
 	return (
         <div>
-            <header class="header">
+            <header className="header">
+                <span>
+                    <a href="/"><img src="../../img/logo-furnique-2.png" alt="logo" className="logo"/></a>
+                </span>
+                
 
-                <a href="/"><img src="../../img/logo-big.png" alt="logo" class="logo"/></a>
-
-                <form action="#" class="search">
-                    <input class="search__input" placeholder="Search furniture"/>
-                    <button class="search__button">
-                        <svg class="search__icon">
+                <form action="#" className="search">
+                    <input className="search__input" placeholder="Search furniture"/>
+                    <button className="search__button">
+                        <svg className="search__icon">
                             <use xlinkHref="../../img/sprite.svg#icon-magnifying-glass"></use> 
                         </svg>
                     </button>
                 </form>
 
-                <nav class="user-nav">
+                <nav className="user-nav">
                     <div className="user-nav__icon-box">
                         <svg className="user-nav__icon">
                             <use xlinkHref="../../img/sprite.svg#icon-shopping-cart"></use> 
                         </svg>
-                        <span class="user-nav__notification">7</span>
+                        <span className="user-nav__notification">7</span>
                     </div>
 
                     <div className="user-nav__icon-box">
                         <svg className="user-nav__icon">
                             <use xlinkHref="../../img/sprite.svg#icon-check"></use> 
                         </svg>
-                        <span>Go to Checkout</span>
+                        <span>Checkout</span>
                     </div>
 
                     <div className="user-nav__icon-box">

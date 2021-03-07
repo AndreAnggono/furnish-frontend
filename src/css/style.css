@@ -23,7 +23,7 @@
   border-radius: 50%;
   position: fixed;
   top: 7rem;
-  left: 2rem;
+  left: 2.2rem;
   background-image: linear-gradient(#9ccdd8, #0c4f5f);
   transition: transform 0.8s; }
 
@@ -102,7 +102,8 @@ body {
   line-height: 1.6;
   color: #777;
   min-height: 100vh;
-  padding: 0 30px; }
+  padding: 0 30px;
+  font-size: 1.8rem; }
 
 .header {
   font-size: 1.8rem;
@@ -116,6 +117,13 @@ body {
   top: 0;
   left: 0;
   right: 0; }
+
+.container {
+  margin-top: 7.5rem; }
+
+h1 {
+  text-align: center;
+  font-size: 4rem; }
 
 .logo {
   height: 5rem;
@@ -137,6 +145,10 @@ body {
     width: 90%;
     transition: all 0.2s;
     margin-right: -3.25rem; }
+  .search__input:hover {
+    background-color: #faf9f9; }
+  .search__input:hover + .search__button {
+    background-color: #faf9f9; }
   .search__input:focus {
     outline: none;
     width: 100%;
@@ -196,6 +208,12 @@ body {
 
 .landing {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(250, 249, 249, 0.753), rgba(244, 242, 242, 0.527)), url(./landing.png);
-  background-size: cover;
-  background-position: top; }
+  background-image: linear-gradient(to right bottom, rgba(250, 249, 249, 0), rgba(244, 242, 242, 0)), url(./living-room.jpg);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.product__image {
+  display: block;
+  height: 200px;
+  margin: 0 auto; }

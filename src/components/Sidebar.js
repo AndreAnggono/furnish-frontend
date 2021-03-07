@@ -17,7 +17,7 @@ function Sidebar() {
                 <ul className="navigation__list">
                     <li className="navigation__item"><a href="/products" className="navigation__link">All Products</a></li>
                     <li className="navigation__item"><a href="/" className="navigation__link">Living room</a></li>
-                    <li className="navigation__item"><a href="/" className="navigation__link">Dinning room</a></li>
+                    <li className="navigation__item"><a href="/" className="navigation__link">Dining room</a></li>
                     <li className="navigation__item"><a href="/" className="navigation__link">Sales</a></li>
                 </ul>
             </nav>

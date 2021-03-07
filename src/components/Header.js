@@ -1,4 +1,5 @@
 import React from "react";
+import Search from "./Search";
 
 function Header() {
 	return (
@@ -9,14 +10,7 @@ function Header() {
                 </span>
                 
 
-                <form action="#" className="search">
-                    <input className="search__input" placeholder="Search furniture"/>
-                    <button className="search__button">
-                        <svg className="search__icon">
-                            <use xlinkHref="../../img/sprite.svg#icon-magnifying-glass"></use> 
-                        </svg>
-                    </button>
-                </form>
+                <Search/>
 
                 <nav className="user-nav">
                     <div className="user-nav__icon-box">

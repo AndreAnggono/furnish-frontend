@@ -23,6 +23,8 @@ $shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 $color-white: #fff;
 $color-black: #000;
 
+$color-test: #2a435b;
+
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600&family=Raleway&display=swap");
 @import "navigation";
 
@@ -49,6 +51,7 @@ body {
   color: $color-grey-dark-2;
   min-height: 100vh;
   padding: 0 30px;
+  font-size: 1.8rem;
 }
 
 .header {
@@ -63,6 +66,15 @@ body {
   top: 0;
   left: 0;
   right: 0;
+}
+
+.container {
+  margin-top: 7.5rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4rem;
 }
 
 .logo {
@@ -87,6 +99,13 @@ body {
     width: 90%;
     transition: all 0.2s;
     margin-right: -3.25rem;
+  }
+
+  &__input:hover {
+    background-color: $color-grey-light-1;
+  }
+  &__input:hover + &__button {
+    background-color: $color-grey-light-1;
   }
 
   &__input:focus {
@@ -164,23 +183,26 @@ body {
   }
 }
 
-// .container {
-//   display: flex;
-// }
-
 // .sidebar {
 //   flex: 0 0 18%;
 // }
 
 .landing {
-  //   flex: 1 0 82%;
+  // flex: 1 0 82%;
   height: 95vh;
   background-image: linear-gradient(
       to right bottom,
-      rgba($color-grey-light-1, 0.753),
-      rgba($color-grey-light-2, 0.527)
+      rgba($color-grey-light-1, 0),
+      rgba($color-grey-light-2, 0)
     ),
-    url(./landing.png);
-  background-size: cover;
-  background-position: top;
+    url(./living-room.jpg);
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.product__image {
+  display: block;
+  height: 200px;
+  margin: 0 auto;
 }

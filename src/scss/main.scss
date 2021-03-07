@@ -203,6 +203,12 @@ h1 {
 
 .product__image {
   display: block;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.product__image-thumbnail {
+  display: block;
   height: 200px;
   margin: 0 auto;
 }

@@ -1,6 +1,7 @@
 import serverURL from '../config/database';
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function ProductsIndex({history}) {
     const [products, setProducts] = useState('');
@@ -19,6 +20,7 @@ function ProductsIndex({history}) {
         return <div>Loading...</div>
     }
 
+    // @ts-ignore
     const productList = products.map(product => {
         const {name, description, price, color, style, categories, image} = product;
         const showCategories = categories.map(category => (
@@ -26,7 +28,10 @@ function ProductsIndex({history}) {
         ));
         return(
             <div key={product.id}> 
-            <a href={`product/${product.id}`}><img className="product__image" src={image} alt=""/></a>
+
+            <Link to={`product/${product.id}`} >
+                <img className="product__image-thumbnail" src={image} alt=""/>
+            </Link>
             <p><strong>{name}</strong></p>
             <p>Description: {description}</p>
             <p>Price: ${price}</p>

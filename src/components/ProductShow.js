@@ -5,12 +5,14 @@ import serverURL from '../config/database';
 function ProductShow({match}) {
     const [product, setProduct] = useState('');
 
-    const productURL = (id) => {
-        return serverURL + `products/${id}`
-    }
-    const id = match.params.product_id;
+    
 
     useEffect(() => {
+        const productURL = (id) => {
+            return serverURL + `products/${id}`
+        }
+        const id = match.params.product_id;
+        
         async function fetchProduct () {
         const response = await axios.get(productURL(id));
         // productObj = response.data;

@@ -1,4 +1,6 @@
 import React from "react";
+import CartSummary from "./CartSummary";
+import CheckoutCart from "./CheckoutCart";
 import Search from "./Search";
 
 function Header() {
@@ -12,20 +14,13 @@ function Header() {
 
                 <Search/>
 
-                <nav className="user-nav">
-                    <div className="user-nav__icon-box">
-                        <svg className="user-nav__icon">
-                            <use xlinkHref="../../img/sprite.svg#icon-shopping-cart"></use> 
-                        </svg>
-                        <span className="user-nav__notification">7</span>
-                    </div>
+                
 
-                    <div className="user-nav__icon-box">
-                        <svg className="user-nav__icon">
-                            <use xlinkHref="../../img/sprite.svg#icon-check"></use> 
-                        </svg>
-                        <span>Checkout</span>
-                    </div>
+                <nav className="user-nav">
+                    <CartSummary />
+
+                    <CheckoutCart/>
+                    
 
                     <div className="user-nav__icon-box">
                         <svg className="user-nav__icon">

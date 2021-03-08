@@ -11,7 +11,8 @@ import ProductShow from './ProductShow';
 import Sidebar from './Sidebar';
 import UserShow from './UserShow';
 import CheckoutCart from './CheckoutCart';
-import { CartProvider } from 'use-shopping-cart/dist/react';
+import { CartProvider } from 'use-shopping-cart';
+import { Toaster } from 'react-hot-toast';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ const queryClient = new QueryClient();
 
 const stripePromise = loadStripe('pk_test_51IQkAPA74VPmdiQEYANYUSHAGYpGzebZ4QPFaSlBV0JDtOTeocq6C0AVWs6kKdj7SM5nGjQjmb4G7c97pbe25gGn00jIfBifih');
 
+console.log(stripePromise);
 function App(props) {
 
 	return (
@@ -33,6 +35,7 @@ function App(props) {
 				>
 					<BrowserRouter>
 						<Header/>
+						<Toaster position="top-left"/>
 						<Sidebar/>
 						<div className="container">
 							<Switch>

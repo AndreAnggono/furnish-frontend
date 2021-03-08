@@ -1,15 +1,14 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import serverURL from '../config/database';
+import AddToCart from './AddToCart';
+import RemoveFromCart from './RemoveFromCart';
 
 function ProductShow({match}) {
     const [product, setProduct] = useState('');
 
-    
-
     useEffect(() => {
         const productURL = (id) => {
-            return serverURL + `products/${id}`
+            return `/products/${id}`
         }
         const id = match.params.product_id;
         
@@ -41,6 +40,8 @@ function ProductShow({match}) {
             <p>Color: {color}</p>
             <p>Style: {style}</p>
             <ul>Categories: {showCategories}</ul>
+            <AddToCart product={product}/>
+            <RemoveFromCart product={product}/>
         </>
     )
 }

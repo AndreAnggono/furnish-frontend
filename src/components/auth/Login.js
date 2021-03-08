@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import SERVER from "../../config/database";
+import { LOGGED_IN } from "../../config/serverData";
 import axios from "axios";
 
 export class Login extends Component {
@@ -12,12 +12,12 @@ export class Login extends Component {
 	}
 
 	isLoggedIn() {
-		// axios.get(`${SERVER}isloggedin`).then((res) => {
-		// 	console.log(res.data);
-		// 	this.setState({
-		// 		status: res.data.status
-		// 	});
-		// });
+		axios.get(LOGGED_IN).then((res) => {
+			console.log(res.data);
+			this.setState({
+				status: res.data.status
+			});
+		});
 	}
 
 	componentDidMount() {

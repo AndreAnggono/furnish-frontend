@@ -1,15 +1,20 @@
-import serverURL from '../config/database';
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useQuery } from 'react-query';
 
-function ProductsIndex({history}) {
+
+
+function ProductList({history}) {
+    // const {data: products, isLoading} = useQuery('Products', () => axios('/products').then((res) => res.data));
+    // console.log(products);
+
     const [products, setProducts] = useState('');
 
     useEffect(() => {
-        const productsURL = serverURL + 'products';
+        // const productsURL = serverURL + 'products';
         async function fetchProduct () {
-        const response = await axios.get(productsURL);
+        const response = await axios.get('/products');
         // productObj = response.data;
         setProducts(response.data);
         }
@@ -19,6 +24,7 @@ function ProductsIndex({history}) {
     if (!products) {
         return <div>Loading...</div>
     }
+    // if (isLoading) return <h1>Loading..</h1>
 
     // @ts-ignore
     const productList = products.map(product => {
@@ -50,4 +56,4 @@ function ProductsIndex({history}) {
     )
 }
 
-export default ProductsIndex
+export default ProductList

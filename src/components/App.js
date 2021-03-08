@@ -12,7 +12,8 @@ import ProductShow from "./ProductShow";
 import Sidebar from "./Sidebar";
 import UserShow from "./UserShow";
 import CheckoutCart from "./CheckoutCart";
-import { CartProvider } from "use-shopping-cart/dist/react";
+import { CartProvider } from "use-shopping-cart";
+import { Toaster } from "react-hot-toast";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import { LOGGED_IN } from "../config/serverData";
@@ -25,6 +26,7 @@ const queryClient = new QueryClient();
 
 const stripePromise = loadStripe("pk_test_51IQkAPA74VPmdiQEYANYUSHAGYpGzebZ4QPFaSlBV0JDtOTeocq6C0AVWs6kKdj7SM5nGjQjmb4G7c97pbe25gGn00jIfBifih");
 
+console.log(stripePromise);
 function App(props) {
 	const [status, setStatus] = useState("");
 
@@ -44,6 +46,7 @@ function App(props) {
 				<CartProvider mode="checkout-session" stripe={stripePromise} currency="AUD">
 					<BrowserRouter>
 						<Header {...props} status={status} setStatus={setStatus} />
+						<Toaster position="top-left" />
 						<Sidebar />
 						<div className="container">
 							<Switch>
@@ -66,4 +69,5 @@ function App(props) {
 	);
 }
 
+export { stripePromise };
 export default App;

@@ -5,6 +5,7 @@ import { useQuery } from 'react-query';
 
 
 
+
 function ProductList({history}) {
     // const {data: products, isLoading} = useQuery('Products', () => axios('/products').then((res) => res.data));
     // console.log(products);
@@ -14,7 +15,7 @@ function ProductList({history}) {
     useEffect(() => {
         // const productsURL = serverURL + 'products';
         async function fetchProduct () {
-        const response = await axios.get('/products');
+        const response = await axios.get('http://localhost:3000/products');
         // productObj = response.data;
         setProducts(response.data);
         }

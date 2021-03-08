@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { LOGOUT } from "../config/serverData";
+import CartSummary from "./CartSummary";
+import CheckoutCart from "./CheckoutCart";
 import Search from "./Search";
 import axios from "axios";
 
@@ -35,19 +37,9 @@ function Header(props) {
 				<Search />
 
 				<nav className="user-nav">
-					<div className="user-nav__icon-box">
-						<svg className="user-nav__icon">
-							<use xlinkHref="../../img/sprite.svg#icon-shopping-cart"></use>
-						</svg>
-						<span className="user-nav__notification">7</span>
-					</div>
+					<CartSummary />
 
-					<div className="user-nav__icon-box">
-						<svg className="user-nav__icon">
-							<use xlinkHref="../../img/sprite.svg#icon-check"></use>
-						</svg>
-						<span>Checkout</span>
-					</div>
+					<CheckoutCart />
 
 					<div className="user-nav__icon-box">
 						<svg className="user-nav__icon">
@@ -57,8 +49,8 @@ function Header(props) {
 
 					<div className="user-nav__user">
 						{/* <span className="user-span__user-login">Login</span>
-                        <span className="user-span__user-login">Sign Up</span>
-                        <span className="user-span__user-name">User name</span> */}
+						<span className="user-span__user-login">Sign Up</span>
+						<span className="user-span__user-name">User name</span> */}
 						{status === "LOGGED_IN" ? (
 							<span className="user-span__user-login" onClick={logout}>
 								Logout

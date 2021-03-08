@@ -5,12 +5,21 @@ import { useShoppingCart } from "use-shopping-cart";
 function AddToCart({ product }) {
 	// const {addItem, cartCount, cartDetails} = useShoppingCart();
 
-	// function _addItem() {
-	//     // addItem(product);
-	//     toast.success(`${product.name} is added to your card`);
-	//   }
+    const {addItem, cartCount, cartDetails, totalPrice} = useShoppingCart();
+    // const {cartCount, cartDetails, totalPrice} = useShoppingCart();
 
-	return <button>AddToCart</button>;
+    function _addItem() {
+        addItem(product);
+        toast.success(`${product.name} is added to your card`);
+      }
+
+    console.log({cartCount, cartDetails, totalPrice});
+
+    return(
+        <button onClick={_addItem}>
+            AddToCart
+        </button>
+    )
 }
 
 export default AddToCart;

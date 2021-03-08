@@ -53,4 +53,5 @@ function App(props) {
 	);
 }
 
+export { stripePromise };
 export default App;

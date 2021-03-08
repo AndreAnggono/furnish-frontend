@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import AddToCart from './AddToCart';
 import RemoveFromCart from './RemoveFromCart';
 
+
 function ProductShow({match}) {
     // const [product, setProduct] = useState('');
 
@@ -29,7 +30,7 @@ function ProductShow({match}) {
 
     // @ts-ignore
     const {product_id} = useParams();
-    const {data: product, isLoading, isError, error } = useQuery(["Product", product_id], () => axios(`/products/${product_id}`).then(res => res.data));
+    const {data: product, isLoading, isError, error } = useQuery(["Product", product_id], () => axios(`http://localhost:3000/products/${product_id}`).then(res => res.data));
 
     if (isLoading) return <h1>Loading...</h1>
     if (isError) return <h1>{error}</h1>

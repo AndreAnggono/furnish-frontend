@@ -26,7 +26,6 @@ const queryClient = new QueryClient();
 
 const stripePromise = loadStripe("pk_test_51IQkAPA74VPmdiQEYANYUSHAGYpGzebZ4QPFaSlBV0JDtOTeocq6C0AVWs6kKdj7SM5nGjQjmb4G7c97pbe25gGn00jIfBifih");
 
-console.log(stripePromise);
 function App(props) {
 	const [status, setStatus] = useState("");
 

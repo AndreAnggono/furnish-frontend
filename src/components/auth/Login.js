@@ -67,10 +67,12 @@ export class Login extends Component {
 		if (this.state.errors.length > 0) {
 			return (
 				<>
-					<h3>Errors:</h3>
+					<h3 className="error">Errors:</h3>
 					<ul>
 						{this.state.errors.map((e, i) => (
-							<li key={i}>{e}</li>
+							<li key={i} className="error">
+								{e}
+							</li>
 						))}
 					</ul>
 				</>

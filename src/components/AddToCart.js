@@ -1,8 +1,9 @@
-import React from 'react';
-import toast from 'react-hot-toast';
-import {useShoppingCart} from 'use-shopping-cart';
+import React from "react";
+import toast from "react-hot-toast";
+import { useShoppingCart } from "use-shopping-cart";
 
-function AddToCart({product}) {
+function AddToCart({ product }) {
+	// const {addItem, cartCount, cartDetails} = useShoppingCart();
 
     const {addItem, cartCount, cartDetails, totalPrice} = useShoppingCart();
     // const {cartCount, cartDetails, totalPrice} = useShoppingCart();

@@ -36,25 +36,25 @@ function SuccessCheckout () {
     // console.log('productArray', productArray);
 
     
-    const [userId, setUserId] = useState("");
-    const userData = async () => {
-		const response = await axios.get(LOGGED_IN, { withCredentials: true });
-        return response;
-	};
+    // const [userId, setUserId] = useState("");
+    // const userData = async () => {
+	// 	const response = await axios.get(LOGGED_IN, { withCredentials: true });
+    //     return response;
+	// };
     
-    useEffect(() => {
+    // useEffect(() => {
         
-        // console.log((await userData()).data.user.id);
-        createSale();
-        console.log("CREATESALE");
-    }, []);
+    //     // console.log((await userData()).data.user.id);
+    //     createSale();
+    //     console.log("CREATESALE");
+    // }, []);
 
-    const item = [ { 'item': '60441d848c6160745255c49d', 'qty': '2', 'price': '15' } ]
-    const createSale = () => {
-        axios.post(ROOT + '/create-sale', {
-            'user': '60445ca0e38b037e44248754', item
-        })
-    }
+    // const item = [ { 'item': '60441d848c6160745255c49d', 'qty': '2', 'price': '15' } ]
+    // const createSale = () => {
+    //     axios.post(ROOT + '/create-sale', {
+    //         'user': '60445ca0e38b037e44248754', item
+    //     })
+    // }
 
     if (isLoading) return <h1>Loading...</h1>
 
@@ -67,8 +67,8 @@ function SuccessCheckout () {
     return(
         <>
             <h1>Thank you for purchasing</h1>
-            <p>Email: {data.customer_details.email}</p>
-            <p>Order total: ${data.amount_total / 100}</p>
+            <p>Email: {data.checkoutSession.customer_details.email}</p>
+            <p>Order total: ${data.checkoutSession.amount_total / 100}</p>
         </>
     )
 }

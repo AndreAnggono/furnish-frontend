@@ -10,12 +10,13 @@ import Home from "./Home";
 import ProductList from "./ProductList";
 import ProductShow from "./ProductShow";
 import Sidebar from "./Sidebar";
-import UserShow from "./UserShow";
+import UserShow from "./profile/UserShow";
 import CheckoutCart from "./CheckoutCart";
 import { CartProvider } from "use-shopping-cart";
 import { Toaster } from "react-hot-toast";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
+import SearchList from "./SearchList";
 import { LOGGED_IN } from "../config/serverData";
 import SuccessCheckout from "./SuccessCheckout";
 
@@ -30,6 +31,7 @@ const stripePromise = loadStripe("pk_test_51IQkAPA74VPmdiQEYANYUSHAGYpGzebZ4QPFa
 function App(props) {
 	const [status, setStatus] = useState("");
 	const [userId, setUserId] = useState("");
+	const [user, setUser] = useState("");
 
 	const isLoggedIn = () => {
 		axios.get(LOGGED_IN, { withCredentials: true }).then((res) => {
@@ -38,6 +40,7 @@ function App(props) {
 			if ( res.data.user ) {
 				setUserId(res.data.user.id)
 			}
+			setUser(res.data.user);
 		});
 	};
 
@@ -65,8 +68,26 @@ function App(props) {
 
 								<Route path="/login" component={(props) => <Login {...props} status={status} setStatus={setStatus} />} />
 								<Route path="/signup" component={(props) => <Register {...props} status={status} setStatus={setStatus} />} />
+								<Route
+									path="/search"
+									component={(props) => (
+										<SearchList
+											{...props}
+											search={window.location.pathname + window.location.search}
+											heading={`Search result for: ${window.location.search.slice(3).replaceAll("+", " ")}`}
+										/>
+									)}
+								/>
+								<Route
+									path="/livingroom"
+									component={(props) => <SearchList {...props} search={`/products/q?categories=living room`} heading={`Living Room Products`} />}
+								/>
+								<Route
+									path="/diningroom"
+									component={(props) => <SearchList {...props} search={`/products/q?categories=dining room`} heading={`Dining Room Products`} />}
+								/>
 
-								<Route exact path="/user/:user_id" component={() => <UserShow />} />
+								<Route exact path="/profile" component={(props) => <UserShow {...props} user={user} status={status} />} />
 							</Switch>
 						</div>
 					</BrowserRouter>

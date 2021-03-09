@@ -17,6 +17,10 @@ function Header(props) {
 		});
 	};
 
+	const redirToProfile = () => {
+		history.push("/profile");
+	};
+
 	const redirToLogin = () => {
 		history.push("/login");
 	};
@@ -44,7 +48,7 @@ function Header(props) {
 					userId={props.userId} />
 
 					<div className="user-nav__icon-box">
-						<svg className="user-nav__icon">
+						<svg className="user-nav__icon" onClick={redirToProfile}>
 							<use xlinkHref="../../img/sprite.svg#icon-emoji-flirt"></use>
 						</svg>
 					</div>

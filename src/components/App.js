@@ -10,7 +10,7 @@ import Home from "./Home";
 import ProductList from "./ProductList";
 import ProductShow from "./ProductShow";
 import Sidebar from "./Sidebar";
-import UserShow from "./UserShow";
+import UserShow from "./profile/UserShow";
 import CheckoutCart from "./CheckoutCart";
 import { CartProvider } from "use-shopping-cart";
 import { Toaster } from "react-hot-toast";
@@ -29,10 +29,12 @@ const stripePromise = loadStripe("pk_test_51IQkAPA74VPmdiQEYANYUSHAGYpGzebZ4QPFa
 
 function App(props) {
 	const [status, setStatus] = useState("");
+	const [user, setUser] = useState("");
 
 	const isLoggedIn = () => {
 		axios.get(LOGGED_IN, { withCredentials: true }).then((res) => {
 			setStatus(res.data.status);
+			setUser(res.data.user);
 		});
 	};
 
@@ -77,7 +79,7 @@ function App(props) {
 									component={(props) => <SearchList {...props} search={`/products/q?categories=dining room`} heading={`Dining Room Products`} />}
 								/>
 
-								<Route exact path="/user/:user_id" component={() => <UserShow />} />
+								<Route exact path="/profile" component={(props) => <UserShow {...props} user={user} status={status} />} />
 							</Switch>
 						</div>
 					</BrowserRouter>

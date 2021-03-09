@@ -16,6 +16,7 @@ import { CartProvider } from "use-shopping-cart";
 import { Toaster } from "react-hot-toast";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
+import SearchList from "./SearchList";
 import { LOGGED_IN } from "../config/serverData";
 
 dotenv.config();
@@ -57,6 +58,24 @@ function App(props) {
 
 								<Route path="/login" component={(props) => <Login {...props} status={status} setStatus={setStatus} />} />
 								<Route path="/signup" component={(props) => <Register {...props} status={status} setStatus={setStatus} />} />
+								<Route
+									path="/search"
+									component={(props) => (
+										<SearchList
+											{...props}
+											search={window.location.pathname + window.location.search}
+											heading={`Search result for: ${window.location.search.slice(3).replaceAll("+", " ")}`}
+										/>
+									)}
+								/>
+								<Route
+									path="/livingroom"
+									component={(props) => <SearchList {...props} search={`/products/q?categories=living room`} heading={`Living Room Products`} />}
+								/>
+								<Route
+									path="/diningroom"
+									component={(props) => <SearchList {...props} search={`/products/q?categories=dining room`} heading={`Dining Room Products`} />}
+								/>
 
 								<Route exact path="/user/:user_id" component={() => <UserShow />} />
 							</Switch>

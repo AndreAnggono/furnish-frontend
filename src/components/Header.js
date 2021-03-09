@@ -39,7 +39,9 @@ function Header(props) {
 				<nav className="user-nav">
 					<CartSummary />
 
-					<CheckoutCart />
+					<CheckoutCart 
+// @ts-ignore
+					userId={props.userId} />
 
 					<div className="user-nav__icon-box">
 						<svg className="user-nav__icon">

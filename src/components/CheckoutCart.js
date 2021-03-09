@@ -2,8 +2,9 @@ import React from 'react';
 import { useShoppingCart } from 'use-shopping-cart';
 import useCheckout from '../utils/useCheckout';
 
-function CheckoutCart() {
-    const _handleCheckout = useCheckout();
+function CheckoutCart({userId}) {
+
+    const _handleCheckout = useCheckout(userId);
     const {cartCount} = useShoppingCart();
     return(
         

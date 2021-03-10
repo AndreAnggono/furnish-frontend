@@ -19,7 +19,7 @@ function useCheckout(userId) {
 		if (session) {
 			console.log(session);
 			const stripeObj = await stripePromise;
-			stripeObj.redirectToCheckout({ sessionId: session.session.id });
+			stripeObj.redirectToCheckout({ sessionId: session.id });
 		}
 	}
 	return _handleCheckout;

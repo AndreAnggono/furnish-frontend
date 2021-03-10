@@ -45,7 +45,7 @@ function Header(props) {
 
 					<CheckoutCart 
 // @ts-ignore
-					userId={props.userId} />
+					user={props.user} />
 
 					<div className="user-nav__icon-box">
 						<svg className="user-nav__icon" onClick={redirToProfile}>

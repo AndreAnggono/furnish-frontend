@@ -1,7 +1,6 @@
 import React from "react";
 import toast from "react-hot-toast";
 import { useShoppingCart } from "use-shopping-cart";
-import useCart from "../utils/useCart";
 
 function AddToCart({ product }) {
 	// also can call cartCount, cartDetails, totalPrice from useShoppingCart();

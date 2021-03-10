@@ -36,7 +36,7 @@ function App(props) {
 	const isLoggedIn = () => {
 		axios.get(LOGGED_IN, { withCredentials: true }).then((res) => {
 			setStatus(res.data.status);
-			console.log(res.data);
+
 			// if ( res.data.user ) {
 			// 	setUserId(res.data.user.id)
 			// }
@@ -58,7 +58,7 @@ function App(props) {
 						<Sidebar />
 						<div className="container">
 							<Switch>
-								<Route exact path="/" component={() => <Home status={status} user={user} />} />
+								<Route exact path="/" component={() => <Home />} />
 
 								<Route exact path="/products" component={(props) => <ProductList {...props} />} />
 								<Route exact path="/product/:product_id" component={(props) => <ProductShow {...props} />} />

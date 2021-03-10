@@ -6,18 +6,19 @@ function AddToCart({ product }) {
 	// also can call cartCount, cartDetails, totalPrice from useShoppingCart();
     const {addItem} = useShoppingCart();
 
-    // const {cartItems, addItem} = useCart();
-    // console.log(cartItems);
-
     function _addItem() {
         addItem(product);
         toast.success(`${product.name} is added to your card`);
     }
 
+
     return(
-        <button onClick={_addItem}>
-            AddToCart
-        </button>
+        <>
+            <button onClick={_addItem}>
+                AddToCart
+            </button>
+        </>
+        
     )
 }
 

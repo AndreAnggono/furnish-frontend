@@ -62,7 +62,7 @@ function App(props) {
 
 								<Route exact path="/products" component={(props) => <ProductList {...props} />} />
 								<Route exact path="/product/:product_id" component={(props) => <ProductShow {...props} />} />
-								<Route exact path="/checkout" component={(props) => <CheckoutCart {...props} user={user} />} />
+								<Route exact path="/checkout" component={(props) => <CheckoutCart {...props} />} />
 
 								<Route path="/result" component={() => <SuccessCheckout/>} />
 

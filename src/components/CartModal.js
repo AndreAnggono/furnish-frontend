@@ -3,12 +3,14 @@ import Modal from 'react-modal';
 import { useShoppingCart } from 'use-shopping-cart';
 import useCheckout from 'utils/useCheckout';
 import CartItem from './CartItem';
+import CheckoutCart from './CheckoutCart';
 
 Modal.setAppElement('#root');
 
-function CartModal({isOpen, toggleModal}) {
+function CartModal({isOpen, toggleModal, user}) {
     const {cartCount, totalPrice, cartDetails} = useShoppingCart();
-    const _handleCheckout = useCheckout();
+    const _handleCheckout = useCheckout(user);
+    
 
     const cartItems = Object.keys(cartDetails).map(key => cartDetails[key])
 
@@ -28,9 +30,8 @@ function CartModal({isOpen, toggleModal}) {
 
             <hr />
             {showCartItems}
-            <button onClick={_handleCheckout} >
-                Checkout Now
-            </button>
+            
+            <CheckoutCart user={user}/>
             <button onClick={toggleModal}>
                 Still Shopping
             </button>

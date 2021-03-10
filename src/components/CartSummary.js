@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useShoppingCart } from 'use-shopping-cart';
 import CartModal from './CartModal';
 
-function CartSummary() {
+function CartSummary({user}) {
     const {totalPrice, cartCount} = useShoppingCart();
 
     const [isOpen, setOpen] = useState(false);
@@ -19,7 +19,7 @@ function CartSummary() {
                 <span>${totalPrice}</span>
             </div>
             
-            <CartModal isOpen={isOpen} toggleModal={toggleModal} />
+            <CartModal isOpen={isOpen} toggleModal={toggleModal} user={user}/>
         </>
 
     )

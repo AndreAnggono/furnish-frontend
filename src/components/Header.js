@@ -41,7 +41,7 @@ function Header(props) {
 				<Search />
 
 				<nav className="user-nav">
-					<CartSummary />
+					<CartSummary user={props.user}/>
 
 					<CheckoutCart 
 // @ts-ignore

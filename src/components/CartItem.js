@@ -4,7 +4,6 @@ import { useShoppingCart } from 'use-shopping-cart';
 function CartItem({cartItem}) {
     const {setItemQuantity} = useShoppingCart();
 
-
     function _setItemQuantity(event) {
         setItemQuantity(cartItem.id, event.target.value);
     }
@@ -20,6 +19,7 @@ function CartItem({cartItem}) {
                     value={cartItem.quantity}
                     onChange={_setItemQuantity}
                     min={0}
+                    max={cartItem.qty}
                 />
             </div>
         </>

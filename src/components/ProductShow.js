@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { PRODUCTS } from "../config/serverData";
 import AddToCart from "./AddToCart";
+import CheckInStock from "./CheckInStock";
 import RemoveFromCart from "./RemoveFromCart";
 
 function ProductShow({ match }) {
@@ -48,8 +49,8 @@ function ProductShow({ match }) {
 			<p>Color: {color}</p>
 			<p>Style: {style}</p>
 			<ul>Categories: {showCategories}</ul>
-			<AddToCart product={product} />
-			<RemoveFromCart product={product} />
+			
+			<CheckInStock product={product}/>
 		</>
 	);
 }

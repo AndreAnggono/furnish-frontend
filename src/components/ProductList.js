@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ROOT } from "../config/serverData";
 import AddToCart from './AddToCart';
 import RemoveFromCart from './RemoveFromCart';
+import CheckInStock from './CheckInStock';
 
 
 function ProductList({history}) {
@@ -39,9 +40,7 @@ function ProductList({history}) {
             <p>Color: {color}</p>
             <p>Style: {style}</p>
             <ul>Categories: {showCategories}</ul>
-
-            <AddToCart product={product}/>
-            <RemoveFromCart product={product}/>
+            <CheckInStock product={product} />
 
             </div>
         ) 

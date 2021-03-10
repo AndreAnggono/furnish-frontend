@@ -9,7 +9,7 @@ function useCheckout(userId) {
 
 	async function _handleCheckout() {
 		const session = await axios
-			.post(CHECKOUT, {"cartItems": cartDetails, "userId": userId})
+			.post(CHECKOUT, { cartItems: cartDetails, userId: userId })
 			.then((res) => res.data)
 			.catch((error) => {
 				toast.error("Checkout failed!");

@@ -19,7 +19,7 @@ export class Login extends Component {
 	}
 
 	componentDidMount() {
-		// this.redirectIfLoggedIn();
+		this.redirectIfLoggedIn();
 	}
 
 	handleSubmit(event) {
@@ -45,7 +45,7 @@ export class Login extends Component {
 						status: res.data.status
 					});
 					this.props.setStatus(res.data.status);
-					// this.props.history.push("/");
+					this.props.history.push("/");
 				}
 			})
 			.catch((err) => {

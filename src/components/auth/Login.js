@@ -37,6 +37,7 @@ export class Login extends Component {
 				{ withCredentials: true }
 			)
 			.then((res) => {
+				console.log("Andre res after login", res);
 				if (res.data.code === 401) {
 					this.setState({
 						errors: [res.data.error]

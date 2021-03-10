@@ -52,19 +52,19 @@ function App(props) {
 		<>
 			<QueryClientProvider client={queryClient}>
 				<CartProvider mode="checkout-session" stripe={stripePromise} currency="AUD">
-					<BrowserRouter >
+					<BrowserRouter>
 						<Header {...props} status={status} setStatus={setStatus} user={user} />
 						<Toaster position="top-left" />
 						<Sidebar />
 						<div className="container">
 							<Switch>
-								<Route exact path="/" component={() => <Home />} />
+								<Route exact path="/" component={() => <Home status={status} user={user} />} />
 
 								<Route exact path="/products" component={(props) => <ProductList {...props} />} />
 								<Route exact path="/product/:product_id" component={(props) => <ProductShow {...props} />} />
 								<Route exact path="/checkout" component={(props) => <CheckoutCart {...props} user={user} />} />
 
-								<Route path="/result" component={() => <SuccessCheckout/>} />
+								<Route path="/result" component={() => <SuccessCheckout />} />
 
 								<Route path="/login" component={(props) => <Login {...props} status={status} setStatus={setStatus} />} />
 								<Route path="/signup" component={(props) => <Register {...props} status={status} setStatus={setStatus} />} />

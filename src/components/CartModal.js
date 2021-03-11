@@ -27,16 +27,22 @@ function CartModal({isOpen, toggleModal, user}) {
             closeTimeoutMS={500}
         >
             <form onSubmit={_onSubmit}>
-                <div>
+                <div style={{textAlign: "center", margin: '7px'}}>
                     Cart Summary: ${totalPrice} ({cartCount} Items)
                 </div>
 
                 <hr />
                 {showCartItems}
-                <button className="btn__green"> <CheckoutCart content={"Checkout now"} user={user} /> </button>
-                <button onClick={toggleModal}>
-                    Still Shopping
-                </button>
+                <div style={{textAlign: 'center'}}>
+                    <div className="btn btn__green" style={{width: '30rem', margin: '0 auto'}}>
+                        <CheckoutCart content={"Checkout now"} user={user} />
+                    </div>
+                    
+                    <button className="btn btn__black" style={{borderRadius: '5px', width: '30rem'}} onClick={toggleModal}>
+                        Still Shopping
+                    </button>
+                </div>
+                
             </form>
              
         </Modal>

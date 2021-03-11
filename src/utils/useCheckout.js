@@ -7,11 +7,10 @@ import { CHECKOUT } from "../config/serverData";
 
 function useCheckout(user) {
 	const { cartDetails } = useShoppingCart();
-	
 
 	async function _handleCheckout() {
 		const session = await axios
-			.post(CHECKOUT, {"cartItems": cartDetails, "user": user})
+			.post(CHECKOUT, { cartItems: cartDetails, user: user })
 			.then((res) => res.data)
 			.catch((error) => {
 				toast.error("Checkout failed!");

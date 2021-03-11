@@ -36,7 +36,7 @@ function App(props) {
 	const isLoggedIn = () => {
 		axios.get(LOGGED_IN, { withCredentials: true }).then((res) => {
 			setStatus(res.data.status);
-			console.log(res.data);
+
 			// if ( res.data.user ) {
 			// 	setUserId(res.data.user.id)
 			// }
@@ -52,7 +52,7 @@ function App(props) {
 		<>
 			<QueryClientProvider client={queryClient}>
 				<CartProvider mode="checkout-session" stripe={stripePromise} currency="AUD">
-					<BrowserRouter >
+					<BrowserRouter>
 						<Header {...props} status={status} setStatus={setStatus} user={user} />
 						<Toaster position="top-left" />
 						<Sidebar />
@@ -64,7 +64,7 @@ function App(props) {
 								<Route exact path="/product/:product_id" component={(props) => <ProductShow {...props} />} />
 								<Route exact path="/checkout" component={(props) => <CheckoutCart {...props} />} />
 
-								<Route path="/result" component={() => <SuccessCheckout/>} />
+								<Route path="/result" component={() => <SuccessCheckout />} />
 
 								<Route path="/login" component={(props) => <Login {...props} status={status} setStatus={setStatus} />} />
 								<Route path="/signup" component={(props) => <Register {...props} status={status} setStatus={setStatus} />} />

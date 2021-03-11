@@ -38,7 +38,7 @@ export class Login extends Component {
 			.then((res) => {
 				if (res.data.code === 401) {
 					this.setState({
-						errors: [...this.state.errors, res.data.error]
+						errors: [res.data.error]
 					});
 				} else {
 					this.setState({

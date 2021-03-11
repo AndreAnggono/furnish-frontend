@@ -93,16 +93,17 @@
     position: relative;
   }
 
-  &__icon:disabled {
-    pointer-events: none;
-    opacity: 0.7;
-  }
-
   &__icon {
     height: 2.25rem;
     width: 2.25rem;
     fill: $color-grey-dark-2;
   }
+
+  &__icon:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
   &__notification {
     font-size: 1.25rem;
     height: 2.5rem;

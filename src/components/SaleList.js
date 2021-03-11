@@ -27,7 +27,7 @@ export class SaleList extends Component {
 
 		for (let sale of this.state.sales) {
 			for (let product of sale.products) {
-				totalPrice += product.price;
+				totalPrice += product.price / 100;
 			}
 		}
 
@@ -75,7 +75,7 @@ export class SaleList extends Component {
 
 	render() {
 		return (
-			<div className="form__login" style={{marginTop: '4rem'}}>
+			<div className="form__login" style={{ marginTop: "4rem" }}>
 				<h3>Your Purchase History</h3>
 				<table>
 					<thead>

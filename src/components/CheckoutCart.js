@@ -48,7 +48,7 @@ function CheckoutCart({user}) {
     }
     useEffect(() => {
         checkStock()
-    }, [])
+    }, [cartCount])
 
     return(
         <button onClick={() => {

@@ -19,6 +19,7 @@ import Register from "./auth/Register";
 import SearchList from "./SearchList";
 import { LOGGED_IN } from "../config/serverData";
 import SuccessCheckout from "./SuccessCheckout";
+import Footer from "./Footer";
 
 dotenv.config();
 
@@ -51,7 +52,7 @@ function App(props) {
 						<Header {...props} status={status} setStatus={setStatus} user={user} />
 						<Toaster position="top-left" />
 						<Sidebar />
-						<div className="container">
+						<div >
 							<Switch>
 								<Route exact path="/" component={() => <Home />} />
 
@@ -84,6 +85,7 @@ function App(props) {
 
 								<Route exact path="/profile" component={(props) => <UserShow {...props} user={user} status={status} />} />
 							</Switch>
+							<Footer/>
 						</div>
 					</BrowserRouter>
 				</CartProvider>

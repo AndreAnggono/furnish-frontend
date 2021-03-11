@@ -157,13 +157,13 @@ export class EditProfile extends Component {
 					<div>
 						<label>
 							First Name:
-							<input type="text" name="firstName" value={this.state.firstName} onChange={this._handleChange} />
+							<input className="form__input" type="text" name="firstName" value={this.state.firstName} onChange={this._handleChange} />
 						</label>
 					</div>
 					<div>
 						<label>
 							Last Name:
-							<input type="text" name="lastName" value={this.state.lastName} onChange={this._handleChange} />
+							<input className="form__input" type="text" name="lastName" value={this.state.lastName} onChange={this._handleChange} />
 						</label>
 					</div>
 					<div>
@@ -174,7 +174,7 @@ export class EditProfile extends Component {
 								name="email"
 								value={this.state.email}
 								onChange={this._handleChange}
-								className={this.state.validations.email ? "error-box" : ""}
+								className={this.state.validations.email ? "error-box form__input" : "form__input"}
 								required
 							/>
 						</label>
@@ -182,19 +182,19 @@ export class EditProfile extends Component {
 					<div>
 						<label>
 							Line Address:
-							<input type="text" name="line" value={this.state.line} onChange={this._handleChange} />
+							<input className="form__input" type="text" name="line" value={this.state.line} onChange={this._handleChange} />
 						</label>
 					</div>
 					<div>
 						<label>
 							City:
-							<input type="text" name="city" value={this.state.city} onChange={this._handleChange} />
+							<input className="form__input" type="text" name="city" value={this.state.city} onChange={this._handleChange} />
 						</label>
 					</div>
 					<div>
 						<label>
 							Postcode:
-							<input type="text" name="postcode" value={this.state.postcode} onChange={this._handleChange} />
+							<input className="form__input" type="text" name="postcode" value={this.state.postcode} onChange={this._handleChange} />
 						</label>
 					</div>
 					<div>
@@ -223,7 +223,7 @@ export class EditProfile extends Component {
 								name="password"
 								value={this.state.password}
 								onChange={this._handleChange}
-								className={this.state.validations.password ? "error-box" : ""}
+								className={this.state.validations.password ? "error-box form__input" : "form__input"}
 							/>
 						</label>
 					</div>
@@ -235,14 +235,14 @@ export class EditProfile extends Component {
 								name="password_confirmation"
 								value={this.state.password_confirmation}
 								onChange={this._handleChange}
-								className={this.state.validations.password_confirmation ? "error-box" : ""}
+								className={this.state.validations.password_confirmation ? "error-box form__input" : "form__input"}
 							/>
 						</label>
 					</div>
-					<button type="button" onClick={this.props.handleCancel}>
+					<button className="btn btn__red" type="button" onClick={this.props.handleCancel}>
 						Cancel
 					</button>
-					<button>Save</button>
+					<button className="btn btn__blue" >Save</button>
 				</form>
 				{this.renderErrors()}
 			</div>

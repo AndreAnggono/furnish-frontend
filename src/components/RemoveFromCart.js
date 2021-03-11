@@ -15,7 +15,7 @@ function RemoveFromCart({product}) {
     const productInCart = cartItems.find(item => item.id === product.id);
 
     return(
-        <button onClick={_removeItem} disabled={!productInCart}>
+        <button className="btn btn__red" onClick={_removeItem} disabled={!productInCart}>
             Remove from cart
         </button>
     )

@@ -1,0 +1,66 @@
+.product {
+  &__body {
+    // background-color: pink;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    // border-right: 4px solid black;
+    // border-bottom: 4px solid black;
+  }
+
+  &__card {
+    flex: 0 0 26%;
+    border: 2px solid $color-grey-light-3;
+    border-radius: 5%;
+    margin: 1.5rem;
+  }
+
+  &__card-lower {
+    // background-color: rgb(56, 49, 49);
+    // color: white;
+    padding-left: 2.7rem;
+    padding-bottom: 1rem;
+  }
+
+  &__style {
+    font-size: 1.3rem;
+  }
+
+  &__name {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2.2rem;
+    text-decoration-color: rosybrown;
+  }
+
+  &__name:hover {
+    font-weight: 900;
+    color: $color-primary;
+  }
+
+  &__description {
+  }
+
+  &__price {
+    font-weight: 500;
+  }
+
+  &__color {
+  }
+
+  &__categories {
+  }
+
+  &__categories-item {
+  }
+}
+
+li {
+  margin-left: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: $color-primary-dark;
+}

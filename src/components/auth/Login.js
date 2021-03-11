@@ -84,17 +84,19 @@ export class Login extends Component {
 
 	render() {
 		return (
-			<div style={{ marginLeft: "30%" }}>
-				{this.renderErrors()}
-				<h1 style={{ marginLeft: "-89%" }}>Login</h1>
-				<form onSubmit={this.handleSubmit}>
-					<input type="email" name="email" placeholder="youremail@mail.com" value={this.state.email} onChange={this.handleChange} />
-					<input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
-					<button>Continue</button>
-				</form>
-				<p>
-					Don't have an account? <Link to="/signup">Signup</Link>
-				</p>
+			<div>
+				<h1>Login</h1>
+				<div className="form__login">
+					{this.renderErrors()}
+					<form onSubmit={this.handleSubmit}>
+						<input className="form__input" type="email" name="email" placeholder="youremail@mail.com" value={this.state.email} onChange={this.handleChange} />
+						<input className="form__input" type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
+						<button className="btn btn__green">Continue</button>
+					</form>
+					<p>
+						Don't have an account? <Link to="/signup">Signup</Link>
+					</p>
+				</div>
 			</div>
 		);
 	}

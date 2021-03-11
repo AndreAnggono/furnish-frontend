@@ -52,7 +52,7 @@ function App(props) {
 						<Header {...props} status={status} setStatus={setStatus} user={user} />
 						<Toaster position="top-left" />
 						<Sidebar />
-						<div >
+						<div className='content'>
 							<Switch>
 								<Route exact path="/" component={() => <Home />} />
 

@@ -3,7 +3,7 @@
 .header {
   font-size: 1.8rem;
   height: 7.5rem;
-  background-color: white;
+  background-color: #faf9f9;
   border-bottom: #f4f2f2;
   display: flex;
   justify-content: space-around;
@@ -76,6 +76,9 @@
     height: 2.25rem;
     width: 2.25rem;
     fill: #777; }
+  .user-nav__icon:disabled {
+    pointer-events: none;
+    opacity: 0.5; }
   .user-nav__notification {
     font-size: 1.25rem;
     height: 2.5rem;
@@ -84,8 +87,8 @@
     background-color: #176d83;
     color: white;
     position: absolute;
-    top: 1.5rem;
-    right: 1.1rem;
+    top: 1rem;
+    right: 5rem;
     display: flex;
     justify-content: center;
     align-items: center; }
@@ -199,17 +202,23 @@ body {
   min-height: 100vh;
   padding: 0 30px;
   font-size: 1.8rem;
-  margin-top: 10rem; }
+  margin-top: 10rem;
+  min-height: 100vh; }
+
+.content {
+  display: block;
+  min-height: 100vh; }
 
 .container {
   margin-top: 7.5rem;
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
-  grid-template-columns: [sidebar-start] 0.1rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  grid-template-columns: [sidebar-start] 0.1rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  min-height: 100%; }
 
 .banner {
   background-color: #333;
-  grid-column: full-start / col-end 6;
+  grid-column: full-start / full-end;
   background-image: linear-gradient(rgba(250, 249, 249, 0.2), rgba(244, 242, 242, 0.2)), url(../css/shelf.png);
   background-size: cover;
   background-position: center;
@@ -220,12 +229,6 @@ body {
   grid-template-columns: minmax(min-content, max-content);
   grid-row-gap: 1.5rem;
   justify-content: center; }
-  @media only screen and (max-width: 50em) {
-    .banner {
-      grid-column: 1 / -1; } }
-  @media only screen and (max-width: 37.5em) {
-    .banner {
-      padding: 5rem; } }
   .banner__logo {
     height: 3rem;
     justify-self: center; }
@@ -266,7 +269,6 @@ body {
       align-items: start; } }
 
 .feature {
-  float: left;
   width: 33.3333%;
   margin-bottom: 6rem;
   display: grid;
@@ -281,15 +283,15 @@ body {
     fill: #176d83;
     width: 4.5rem;
     height: 4.5rem;
-    grid-row: 1 / span 2;
-    transform: translateY(-1rem); }
+    grid-row: 1 / span 2; }
   .feature__text {
     font-size: 1.7rem; }
 
 .footer {
   background-color: #333;
   grid-column: full-start / full-end;
-  padding: 8rem; }
+  padding: 4rem;
+  margin-top: 60vh; }
 
 .nav {
   list-style: none;
@@ -480,29 +482,126 @@ body {
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1; }
 
-.realtors {
-  background-color: #9ccdd8;
+.landing {
   grid-column: col-start 7 / full-end;
   padding: 3rem;
   display: grid;
   align-content: center;
   justify-content: center;
   justify-items: center;
-  grid-row-gap: 2rem; }
-  .realtors__list {
-    display: grid;
-    grid-template-columns: min-content max-content;
-    grid-column-gap: 2rem;
-    grid-row-gap: 5vh;
-    align-items: center; }
-  .realtors__img {
-    width: 7rem;
-    border-radius: 50%;
-    display: block; }
-  .realtors__sold {
-    text-transform: uppercase;
-    color: #f4f2f2;
-    margin-top: -3px; }
+  grid-row-gap: 2rem;
+  margin-top: 5rem; }
+
+.product__body {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap; }
+
+.product__card {
+  flex: 0 0 26%;
+  border: 2px solid #f0eeee;
+  border-radius: 5%;
+  margin: 1.5rem; }
+
+.product__card-lower {
+  padding-left: 2.7rem;
+  padding-bottom: 1rem; }
+
+.product__style {
+  font-size: 1.3rem; }
+
+.product__name {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2.2rem;
+  text-decoration-color: rosybrown; }
+
+.product__name:hover {
+  font-weight: 900;
+  color: #176d83; }
+
+.product__price {
+  font-weight: 500; }
+
+li {
+  margin-left: 3rem; }
+
+a {
+  text-decoration: none;
+  color: #0c4f5f; }
+
+.btn {
+  font-size: 1.7rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  border-radius: 100px;
+  border: none;
+  color: #fff;
+  overflow: hidden;
+  padding: 1rem 2rem;
+  text-align: center;
+  margin: 0.3rem;
+  margin-top: 1rem; }
+  .btn__lg {
+    padding: 2rem 3rem;
+    font-size: 2rem;
+    font-weight: 600; }
+  .btn__green {
+    background-color: #068a06; }
+  .btn__blue {
+    background-color: #176d83;
+    color: #fff; }
+  .btn__blue:hover {
+    background-color: #9ccdd8; }
+  .btn__black {
+    background-color: #000; }
+  .btn__red {
+    background-color: #cc3001; }
+  .btn__red:hover {
+    background-color: #ff5638; }
+  .btn > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s; }
+  .btn__visible {
+    padding: 2rem 7.5rem; }
+  .btn__invisible {
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%; }
+  .btn__green:hover {
+    background-color: #27ac0d; }
+  .btn__black:hover {
+    background-color: #333; }
+  .btn__checkout {
+    border: none;
+    background-color: #faf9f9;
+    height: 100%;
+    font-family: "Raleway", sans-serif;
+    width: 10rem;
+    font-size: 1.7rem;
+    background-color: transparent; }
+  .btn__checkout:hover {
+    background-color: transparent; }
+  .btn:hover .btn__visible {
+    transform: translateY(100%); }
+  .btn:hover .btn__invisible {
+    top: 0; }
+  .btn:focus {
+    outline: none;
+    animation: pulsate 1s infinite; }
+
+.form__login {
+  margin: 0 auto;
+  margin-left: 35%; }
+
+.form__input {
+  height: 3rem;
+  width: 20rem;
+  margin: 0.3rem; }
 
 h1 {
   text-align: center;
@@ -535,3 +634,6 @@ h1 {
 
 .align-left {
   margin-left: 30px; }
+
+.loading {
+  text-align: center; }

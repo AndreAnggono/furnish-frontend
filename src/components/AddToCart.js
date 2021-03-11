@@ -13,8 +13,8 @@ function AddToCart({ product }) {
 
     return(
         <>
-            <button onClick={_addItem}>
-                AddToCart
+            <button className="btn btn__blue dark" onClick={_addItem}>
+                Add to cart
             </button>
         </>
         

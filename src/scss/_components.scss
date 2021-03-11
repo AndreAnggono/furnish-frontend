@@ -1,0 +1,98 @@
+.btn {
+  font-size: 1.7rem;
+  font-family: $font-display;
+  font-weight: 300;
+  border-radius: 100px;
+  border: none;
+  color: #fff;
+  overflow: hidden;
+  padding: 1rem 2rem;
+  text-align: center;
+  margin: 0.3rem;
+  margin-top: 1rem;
+
+  &__lg {
+    padding: 2rem 3rem;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  &__green {
+    background-color: rgb(6, 138, 6);
+  }
+
+  &__blue {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  &__blue:hover {
+    background-color: $color-primary-light;
+  }
+
+  &__black {
+    background-color: $color-black;
+  }
+
+  &__red {
+    background-color: rgb(204, 48, 1);
+  }
+
+  &__red:hover {
+    background-color: rgb(255, 86, 56);
+  }
+
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &__invisible {
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%;
+  }
+
+  &__green:hover {
+    background-color: rgb(39, 172, 13);
+  }
+
+  &__black:hover {
+    background-color: $color-grey-dark-1;
+  }
+
+  &__checkout {
+    border: none;
+    background-color: $color-grey-light-1;
+    height: 100%;
+    font-family: $font-primary;
+
+    width: 10rem;
+    font-size: 1.7rem;
+    background-color: transparent;
+  }
+
+  &__checkout:hover {
+    background-color: transparent;
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { useShoppingCart } from 'use-shopping-cart';
-import useCheckout from 'utils/useCheckout';
 import CartItem from './CartItem';
 import CheckoutCart from './CheckoutCart';
 
@@ -9,8 +8,6 @@ Modal.setAppElement('#root');
 
 function CartModal({isOpen, toggleModal, user}) {
     const {cartCount, totalPrice, cartDetails} = useShoppingCart();
-    const _handleCheckout = useCheckout(user);
-    
 
     const cartItems = Object.keys(cartDetails).map(key => cartDetails[key])
 
@@ -22,10 +19,6 @@ function CartModal({isOpen, toggleModal, user}) {
         event.preventDefault();
     }
 
-    const _onClick = (event) => {
-        event.preventDefault();
-        
-    }
 
     return(
         <Modal isOpen={isOpen}
@@ -34,17 +27,22 @@ function CartModal({isOpen, toggleModal, user}) {
             closeTimeoutMS={500}
         >
             <form onSubmit={_onSubmit}>
-                <div>
+                <div style={{textAlign: "center", margin: '7px'}}>
                     Cart Summary: ${totalPrice} ({cartCount} Items)
                 </div>
 
                 <hr />
                 {showCartItems}
-
-                <CheckoutCart user={user} />
-                <button onClick={toggleModal}>
-                    Still Shopping
-                </button>
+                <div style={{textAlign: 'center'}}>
+                    <div className="btn btn__green" style={{width: '30rem', margin: '0 auto'}}>
+                        <CheckoutCart content={"Checkout now"} user={user} />
+                    </div>
+                    
+                    <button className="btn btn__black" style={{width: '30rem'}} onClick={toggleModal}>
+                        Still Shopping
+                    </button>
+                </div>
+                
             </form>
              
         </Modal>

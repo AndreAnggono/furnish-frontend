@@ -4,9 +4,8 @@ import { useHistory } from "react-router-dom";
 import { useShoppingCart } from "use-shopping-cart";
 import useCheckout from "../utils/useCheckout";
 
-function CheckoutCart({ user }) {
+function CheckoutCart({ user, content }) {
 	const { cartCount, cartDetails } = useShoppingCart();
-	// console.log(cartDetails);
 	let history = useHistory();
 	const _handleCheckout = useCheckout(user);
 
@@ -18,10 +17,9 @@ function CheckoutCart({ user }) {
 		if (cartItemIds.length !== 0) {
 			let allInStock = true;
 
-			Object.keys(cartDetails).map((key) => {
+			Object.keys(cartDetails).forEach((key) => {
 				const item = cartDetails[key];
 				if (item.qty < item.quantity) {
-					console.log("item.qty", item.qty, "item.quantity", item.quantity);
 					toast.error(`Not enough stock for item ${item.name} (${item.qty} in stock)`);
 					allInStock = false;
 				}
@@ -39,7 +37,6 @@ function CheckoutCart({ user }) {
 
 	const checkReady = () => {
 		if (inStock === true && user) {
-			console.log("CHEKCED");
 			_handleCheckout();
 		} else if (!user) {
 			redirectToLogin();
@@ -56,11 +53,11 @@ function CheckoutCart({ user }) {
 				checkReady();
 			}}
 			disabled={!cartCount}
-			className="user-nav__icon-box"
+			className="btn__checkout user-nav__icon"
 		>
-			<span>Checkout now</span>
+			{content}
 			<svg className="user-nav__icon">
-				<use xlinkHref="../../img/sprite.svg#icon-check"></use>
+				<use xlinkHref="../../img/sprite.svg#icon-export"></use>
 			</svg>
 		</button>
 	);

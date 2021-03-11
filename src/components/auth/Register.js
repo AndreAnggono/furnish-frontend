@@ -136,63 +136,67 @@ export class Register extends Component {
 
 	render() {
 		return (
-			<div style={{ marginLeft: "30%" }}>
-				<h1 style={{ marginLeft: "-77%" }}>Registration</h1>
-				{this.renderErrors()}
-				<form onSubmit={this.handleSubmit}>
-					<div>
-						<label>
-							First Name:
-							<input type="text" name="firstName" placeholder="first name" onChange={this.handleChange} />
-						</label>
-					</div>
-					<div>
-						<label>
-							Last Name:
-							<input type="text" name="lastName" placeholder="last name" onChange={this.handleChange} />
-						</label>
-					</div>
-					<div>
-						<label>
-							Email:
-							<input
-								type="email"
-								name="email"
-								placeholder="youremail@mail.com"
-								required
-								onChange={this.handleChange}
-								className={this.state.validations.email ? "error-box" : ""}
-							/>
-						</label>
-					</div>
-					<div>
-						<label>
-							Password:
-							<input
-								type="password"
-								name="password"
-								placeholder="password"
-								required
-								onChange={this.handleChange}
-								className={this.state.validations.password ? "error-box" : ""}
-							/>
-						</label>
-					</div>
-					<div>
-						<label>
-							Password Confirmation:
-							<input
-								type="password"
-								name="password_confirmation"
-								placeholder="password"
-								required
-								onChange={this.handleChange}
-								className={this.state.validations.password_confirmation ? "error-box" : ""}
-							/>
-						</label>
-					</div>
-					<button disabled={this.state.validations.submitDisabled}>Create account</button>
-				</form>
+			<div>
+				<h1>Registration</h1>
+				<div className="form__login">
+					{this.renderErrors()}
+					<form onSubmit={this.handleSubmit}>
+						<div>
+							<label>
+								First Name:
+								<input className="form__input" type="text" name="firstName" placeholder="first name" onChange={this.handleChange} />
+							</label>
+						</div>
+						<div>
+							<label>
+								Last Name:
+								<input className="form__input" type="text" name="lastName" placeholder="last name" onChange={this.handleChange} />
+							</label>
+						</div>
+						<div>
+							<label>
+								Email:
+								<input
+									type="email"
+									name="email"
+									placeholder="youremail@mail.com"
+									required
+									onChange={this.handleChange}
+									className={this.state.validations.email ? "error-box form__input" : "form__input"}
+								/>
+							</label>
+						</div>
+						<div>
+							<label>
+								Password:
+								<input
+									type="password"
+									name="password"
+									placeholder="password"
+									required
+									onChange={this.handleChange}
+									className={this.state.validations.password ? "error-box form__input" : "form__input"}
+								/>
+							</label>
+						</div>
+						<div>
+							<label>
+								Password Confirmation:
+								<input
+									type="password"
+									name="password_confirmation"
+									placeholder="password"
+									required
+									onChange={this.handleChange}
+									className={this.state.validations.password_confirmation ? "error-box form__input" : "form__input"}
+								/>
+							</label>
+						</div>
+						<button className="btn btn__green" disabled={this.state.validations.submitDisabled}>
+							Create account
+						</button>
+					</form>
+				</div>
 			</div>
 		);
 	}

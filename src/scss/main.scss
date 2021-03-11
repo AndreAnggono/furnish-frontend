@@ -42,7 +42,10 @@ $font-display: "Nunito", sans-serif;
 @import "homes";
 @import "story";
 @import "sidebar";
-@import "realtors";
+@import "landing";
+@import "product";
+@import "components";
+@import "form";
 
 h1 {
   text-align: center;
@@ -81,4 +84,8 @@ h1 {
 
 .align-left {
   margin-left: 30px;
+}
+
+.loading {
+  text-align: center;
 }

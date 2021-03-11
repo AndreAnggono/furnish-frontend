@@ -10,12 +10,14 @@ const PrintProfile = (props) => {
 			<p>
 				Shipping Address:
 				{user.address
-					? `${user.address.line ? user.address.line : ""}, ${user.address.city ? user.address.city : ""} ${
+					? ` ${user.address.line ? user.address.line : ""}, ${user.address.city ? user.address.city : ""} ${
 							user.address.postcode ? user.address.postcode : ""
 					  } ${user.address.state ? user.address.state : ""}`
 					: ""}
 			</p>
-			<button onClick={props.handleClick}>Edit Profile</button>
+			<button className="btn btn__black" onClick={props.handleClick}>
+				Edit Profile
+			</button>
 		</div>
 	);
 };

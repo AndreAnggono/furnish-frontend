@@ -46,14 +46,18 @@ function Header(props) {
 				<nav className="user-nav">
 					<CartSummary user={props.user}/>
 
-					<CheckoutCart
-						// @ts-ignore
-						user={props.user}
-					/>
+					<div>
+						<CheckoutCart 
+							// @ts-ignore
+							user={props.user}
+						/>
+					</div>
+						
+				
 
 					<div className="user-nav__icon-box">
 						<svg className="user-nav__icon" onClick={redirToProfile}>
-							<use xlinkHref="../../img/sprite.svg#icon-emoji-flirt"></use>
+							<use xlinkHref="../../img/sprite.svg#icon-user"></use>
 						</svg>
 					</div>
 

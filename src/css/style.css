@@ -72,6 +72,9 @@
     background-color: #f4f2f2; }
   .user-nav__icon-box {
     position: relative; }
+  .user-nav__icon:disabled {
+    pointer-events: none;
+    opacity: 0.3; }
   .user-nav__icon {
     height: 2.25rem;
     width: 2.25rem;
@@ -479,28 +482,15 @@ body {
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1; }
 
-.realtors {
+.landing {
   grid-column: col-start 7 / full-end;
   padding: 3rem;
   display: grid;
   align-content: center;
   justify-content: center;
   justify-items: center;
-  grid-row-gap: 2rem; }
-  .realtors__list {
-    display: grid;
-    grid-template-columns: min-content max-content;
-    grid-column-gap: 2rem;
-    grid-row-gap: 5vh;
-    align-items: center; }
-  .realtors__img {
-    width: 7rem;
-    border-radius: 50%;
-    display: block; }
-  .realtors__sold {
-    text-transform: uppercase;
-    color: #f4f2f2;
-    margin-top: -3px; }
+  grid-row-gap: 2rem;
+  margin-top: 5rem; }
 
 .product__body {
   display: flex;
@@ -553,6 +543,10 @@ a {
   text-align: center;
   margin: 0.3rem;
   margin-top: 1rem; }
+  .btn__lg {
+    padding: 2rem 3rem;
+    font-size: 2rem;
+    font-weight: 600; }
   .btn__green {
     background-color: #068a06; }
   .btn__blue {
@@ -587,10 +581,11 @@ a {
     background-color: #faf9f9;
     height: 100%;
     font-family: "Raleway", sans-serif;
-    width: 7rem;
-    font-size: 1.7rem; }
+    width: 10rem;
+    font-size: 1.7rem;
+    background-color: transparent; }
   .btn__checkout:hover {
-    background-color: #f4f2f2; }
+    background-color: transparent; }
   .btn:hover .btn__visible {
     transform: translateY(100%); }
   .btn:hover .btn__invisible {

@@ -52,7 +52,7 @@ function CheckoutCart({user, content}) {
             checkReady();
         }} 
             disabled={!cartCount}
-            className="btn__checkout">
+            className="btn__checkout user-nav__icon">
             {content}
             <svg className="user-nav__icon">
                 <use xlinkHref="../../img/sprite.svg#icon-export"></use> 

@@ -11,6 +11,12 @@
   margin: 0.3rem;
   margin-top: 1rem;
 
+  &__lg {
+    padding: 2rem 3rem;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
   &__green {
     background-color: rgb(6, 138, 6);
   }
@@ -55,11 +61,6 @@
   }
 
   &__green:hover {
-    // background-image: linear-gradient(
-    //   to left,
-    //   $color-grey-dark-1,
-    //   $color-grey-dark-2
-    // );
     background-color: rgb(39, 172, 13);
   }
 
@@ -68,19 +69,18 @@
   }
 
   &__checkout {
-    // outline: none;
-    // background-color: black;
     border: none;
     background-color: $color-grey-light-1;
     height: 100%;
     font-family: $font-primary;
 
-    width: 7rem;
+    width: 10rem;
     font-size: 1.7rem;
+    background-color: transparent;
   }
 
   &__checkout:hover {
-    background-color: $color-grey-light-2;
+    background-color: transparent;
   }
 
   &:hover &__visible {

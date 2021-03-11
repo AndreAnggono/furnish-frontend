@@ -8,12 +8,11 @@ function Home() {
 			</div>
 
 			<div className="banner">
-				<div className='realtors'>
-					<a href="/products"><button className="btn btn__black">See all products</button></a>
-					<a href="/livingroom"><button className="btn btn__black">See Living room products</button></a>
-					<a href="/diningroom"><button className="btn btn__black">See Dining room products</button></a>
+				<div className='landing'>
+					<a href="/products"><button className="btn btn__black btn__lg">See all products</button></a>
+					<a href="/livingroom"><button className="btn btn__black btn__lg">See Living room products</button></a>
+					<a href="/diningroom"><button className="btn btn__black btn__lg">See Dining room products</button></a>
 				</div>
-				
 			</div>
 
 			<section className="features">

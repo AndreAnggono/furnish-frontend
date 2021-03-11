@@ -92,6 +92,12 @@
   &__icon-box {
     position: relative;
   }
+
+  &__icon:disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
   &__icon {
     height: 2.25rem;
     width: 2.25rem;

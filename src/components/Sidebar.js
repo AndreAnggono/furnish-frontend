@@ -30,11 +30,6 @@ function Sidebar() {
 							Dining room
 						</a>
 					</li>
-					<li className="navigation__item">
-						<a href="/" className="navigation__link">
-							Sales
-						</a>
-					</li>
 				</ul>
 			</nav>
 		</div>

@@ -63,12 +63,13 @@ function SuccessCheckout () {
     if (isError) return <h1>Error loading page</h1>
 
     const {customer_details, amount_total} = data.checkoutSession;
+    const priceDetails = data.listLineItems;
     
     const items = 
-        data.productDetails.map(item => 
+        data.productDetails.map((item, index) => 
             <div key={item.id}>  
-                <h2>{item.name}</h2>
-                <p>{item.description}</p>
+                <p><strong>{item.name}</strong></p>
+                <p>${priceDetails[index].price.unit_amount/100} x {priceDetails[index].quantity} = ${priceDetails[index].amount_total/100}</p>
                 <img src={item.images[0]} className="product__image-thumbnail"/>
             </div>
         )

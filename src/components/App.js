@@ -86,6 +86,14 @@ function App(props) {
 									path="/diningroom"
 									component={(props) => <SearchList {...props} search={`/products/q?categories=dining room`} heading={`Dining Room Products`} />}
 								/>
+								<Route
+									path="/bedroom"
+									component={(props) => <SearchList {...props} search={`/products/q?categories=bed room`} heading={`Bed Room Products`} />}
+								/>
+								<Route
+									path="/outdoor"
+									component={(props) => <SearchList {...props} search={`/products/q?categories=outdoor`} heading={`Outdoor Products`} />}
+								/>
 
 								<Route exact path="/profile" component={(props) => <UserShow {...props} user={user} status={status} />} />
 							</Switch>

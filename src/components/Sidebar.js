@@ -31,8 +31,13 @@ function Sidebar() {
 						</a>
 					</li>
 					<li className="navigation__item">
-						<a href="/" className="navigation__link">
-							Sales
+						<a href="/bedroom" className="navigation__link">
+							Bed room
+						</a>
+					</li>
+					<li className="navigation__item">
+						<a href="/outdoor" className="navigation__link">
+							Outdoor
 						</a>
 					</li>
 				</ul>

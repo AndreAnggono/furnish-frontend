@@ -25,37 +25,7 @@ function SuccessCheckout () {
     const {cartDetails} = useShoppingCart();
     
     console.log(cartDetails);
-    // let productsToSave = [];
-    // // [{productId, qty, price}];
-    // const productArray = Object.keys(cartDetails).map(key => cartDetails[key]);
-
-    // productArray.map(product => {
-        
-    // })
-        
-    // console.log('productArray', productArray);
-
-    
-    // const [userId, setUserId] = useState("");
-    // const userData = async () => {
-	// 	const response = await axios.get(LOGGED_IN, { withCredentials: true });
-    //     return response;
-	// };
-    
-    // useEffect(() => {
-        
-    //     // console.log((await userData()).data.user.id);
-    //     createSale();
-    //     console.log("CREATESALE");
-    // }, []);
-
-    // const item = [ { 'item': '60441d848c6160745255c49d', 'qty': '2', 'price': '15' } ]
-    // const createSale = () => {
-    //     axios.post(ROOT + '/create-sale', {
-    //         'user': '60445ca0e38b037e44248754', item
-    //     })
-    // }
-
+  
     if (isLoading) return <h1>Loading...</h1>
 
     if (!data && !isLoading) return <h1>No purchase found.</h1>

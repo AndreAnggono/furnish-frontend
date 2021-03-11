@@ -18,7 +18,7 @@ function useCheckout(user) {
 			});
 
 		if (session) {
-			console.log(session);
+			localStorage.removeItem('persist:root');
 			const stripeObj = await stripePromise;
 			stripeObj.redirectToCheckout({ sessionId: session.id });
 		}

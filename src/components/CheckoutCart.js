@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import toast from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
 import { useShoppingCart } from 'use-shopping-cart';
@@ -6,18 +6,15 @@ import useCheckout from '../utils/useCheckout';
 
 function CheckoutCart({user}) {
     const {cartCount, cartDetails} = useShoppingCart();
+    console.log(cartDetails);
     let history = useHistory();
     const _handleCheckout = useCheckout(user);
 
-    const [inStock, setInStock] = useState();
-
-  
+    const [inStock, setInStock] = useState(false);
 
     const cartItemIds = Object.keys(cartDetails);
 
-    
-
-	const checkStock = (callback) => {
+	const checkStock = () => {
         if (cartItemIds.length !== 0) {
             let allInStock = true;
 
@@ -26,15 +23,13 @@ function CheckoutCart({user}) {
                 if (item.qty < item.quantity) {
                     console.log("item.qty", item.qty, "item.quantity", item.quantity);
                     toast.error(`Not enough stock for item ${item.name} (${item.qty} in stock)`);
-                    // item.quantity = item.qty;
-                    console.log("SET STATE TO FALSE")
                     allInStock = false;
                 } 
             })
             if (allInStock === true) {
                 setInStock(true);
             }
-            callback();
+    
 	    }
     }
 
@@ -43,9 +38,7 @@ function CheckoutCart({user}) {
 		history.push("/login");
 	};
 
-
     const checkReady = () => {
-        console.log("CLICKED");
         if (inStock === true && user) {
             console.log("CHEKCED");
             _handleCheckout();
@@ -53,11 +46,14 @@ function CheckoutCart({user}) {
             redirectToLogin();
         }
     }
+    useEffect(() => {
+        checkStock()
+    }, [])
 
-    
     return(
         <button onClick={() => {
-            checkStock(checkReady);
+            checkStock();
+            checkReady();
         }} 
             disabled={!cartCount}
             className="user-nav__icon-box">

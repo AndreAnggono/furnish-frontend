@@ -8,25 +8,6 @@ import CheckInStock from "./CheckInStock";
 import RemoveFromCart from "./RemoveFromCart";
 
 function ProductShow({ match }) {
-	// const [product, setProduct] = useState('');
-
-	// useEffect(() => {
-	//     const productURL = (id) => {
-	//         return `/products/${id}`
-	//     }
-	//     const id = match.params.product_id;
-
-	//     async function fetchProduct () {
-	//     const response = await axios.get(productURL(id));
-	//     // productObj = response.data;
-	//     setProduct(response.data);
-	//     }
-	//     fetchProduct();
-	// }, []);
-
-	// if (!product) {
-	//     return null;
-	// }
 
 	// @ts-ignore
 	const { product_id } = useParams();

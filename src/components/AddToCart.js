@@ -11,7 +11,6 @@ function AddToCart({ product }) {
         toast.success(`${product.name} is added to your card`);
     }
 
-
     return(
         <>
             <button onClick={_addItem}>

@@ -1,8 +1,8 @@
-import React from 'react';
-import { useShoppingCart } from 'use-shopping-cart';
+import React from "react";
+import { useShoppingCart } from "use-shopping-cart";
 
-function CartItem({cartItem}) {
-    const {setItemQuantity} = useShoppingCart();
+function CartItem({ cartItem }) {
+	const { setItemQuantity } = useShoppingCart();
 
     function _setItemQuantity(event) {
         setItemQuantity(cartItem.id, event.target.value);

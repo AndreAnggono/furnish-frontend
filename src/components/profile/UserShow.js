@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Component } from "react";
 import EditProfile from "./EditProfile";
 import PrintProfile from "./PrintProfile";
+import SaleList from "../SaleList";
 
 export class UserShow extends Component {
 	constructor(props) {
@@ -13,6 +14,7 @@ export class UserShow extends Component {
 		};
 
 		this.editProfile = this.editProfile.bind(this);
+		this._handleCancel = this._handleCancel.bind(this);
 	}
 
 	redirToLogin() {
@@ -21,11 +23,19 @@ export class UserShow extends Component {
 		}
 	}
 
-	componentDidMount() {}
+	componentDidMount() {
+		this.redirToLogin();
+	}
 
 	editProfile() {
 		this.setState({
 			editProfile: true
+		});
+	}
+
+	_handleCancel() {
+		this.setState({
+			editProfile: false
 		});
 	}
 
@@ -35,58 +45,14 @@ export class UserShow extends Component {
 			<>
 				<h1>Welcome back{this.state.user.firstName ? `, ${this.state.user.firstName}.` : null}</h1>
 				{this.state.editProfile ? (
-					<EditProfile user={this.state.user} handleClick={this.editProfile} />
+					<EditProfile user={this.state.user} handleCancel={this._handleCancel} />
 				) : (
 					<PrintProfile user={this.state.user} handleClick={this.editProfile} />
 				)}
+				<SaleList user={this.state.user} />
 			</>
 		);
 	}
 }
-
-// const UserShow = (props) => {
-// 	const [status, setStatus] = useState("");
-// 	const [user, setUser] = useState("");
-// 	const [editProfile, setEditProfile] = useState(false);
-
-// const [user, setUser] = useState("");
-
-// user.firstName = "";
-
-// const redirToLogin = () => {
-// 	if (status === "NOT_LOGGED_IN") {
-// 		props.history.push("/login");
-// 	}
-// };
-
-// useEffect(() => {
-// 	setStatus(props.status);
-// 	setUser(props.user);
-// 	redirToLogin();
-// }, [status]);
-
-// useEffect(() => {
-// 	setUser(props.user);
-// }, []);
-
-// const printProfile = () => {
-// 	return (
-// 		<div>
-// 			<p>Name: {`${user.firstName} ${user.lastName}`}</p>
-// 			<p>Email: {user.email}</p>
-// 			<p>Shipping Address: {`${user.address.line}, ${user.address.city} ${user.address.postcode} ${user.address.state}`}</p>
-// 		</div>
-// 	);
-// };
-
-// 	if (!user) return null;
-
-// 	return (
-// 		<>
-// 			<h1>Welcome back{user.firstName ? `, ${user.firstName}.` : null}</h1>
-// 			{editProfile ? null : <PrintProfile user={user} />}
-// 		</>
-// 	);
-// };
 
 export default UserShow;

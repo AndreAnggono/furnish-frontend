@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { useShoppingCart } from 'use-shopping-cart';
-import useCheckout from 'utils/useCheckout';
 import CartItem from './CartItem';
 import CheckoutCart from './CheckoutCart';
 
@@ -9,8 +8,6 @@ Modal.setAppElement('#root');
 
 function CartModal({isOpen, toggleModal, user}) {
     const {cartCount, totalPrice, cartDetails} = useShoppingCart();
-    const _handleCheckout = useCheckout(user);
-    
 
     const cartItems = Object.keys(cartDetails).map(key => cartDetails[key])
 
@@ -22,10 +19,6 @@ function CartModal({isOpen, toggleModal, user}) {
         event.preventDefault();
     }
 
-    const _onClick = (event) => {
-        event.preventDefault();
-        
-    }
 
     return(
         <Modal isOpen={isOpen}
@@ -40,8 +33,7 @@ function CartModal({isOpen, toggleModal, user}) {
 
                 <hr />
                 {showCartItems}
-
-                <CheckoutCart user={user} />
+                <button className="btn__green"> <CheckoutCart user={user} /> </button>
                 <button onClick={toggleModal}>
                     Still Shopping
                 </button>

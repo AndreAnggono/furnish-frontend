@@ -3,9 +3,9 @@ import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { PRODUCTS } from "../config/serverData";
-import AddToCart from "./AddToCart";
+
 import CheckInStock from "./CheckInStock";
-import RemoveFromCart from "./RemoveFromCart";
+
 
 function ProductShow({ match }) {
 
@@ -13,7 +13,7 @@ function ProductShow({ match }) {
 	const { product_id } = useParams();
 	const { data: product, isLoading, isError, error } = useQuery(["Product", product_id], () => axios(`${PRODUCTS}/${product_id}`).then((res) => res.data));
 
-	if (isLoading) return <h1>Loading...</h1>;
+	if (isLoading) return <div className="loading">Loading...</div>;
 	if (isError) return <h1>{error}</h1>;
 
 	// @ts-ignore

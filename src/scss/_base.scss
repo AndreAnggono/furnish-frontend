@@ -29,6 +29,7 @@ body {
   padding: 0 30px;
   font-size: 1.8rem;
   margin-top: 10rem;
+  min-height: 100vh;
 }
 
 .container {
@@ -40,4 +41,5 @@ body {
     [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
     [center-end] minmax(6rem, 1fr)
     [full-end];
+  min-height: 90vh;
 }

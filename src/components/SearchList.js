@@ -22,7 +22,7 @@ const SearchList = (props) => {
 	}, []);
 
 	if (!products) {
-		return <h1>Loading...</h1>;
+		return <div className="loading">Loading...</div>;
 	}
 
 	// @ts-ignore

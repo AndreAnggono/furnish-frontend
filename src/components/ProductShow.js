@@ -4,28 +4,10 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { PRODUCTS } from "../config/serverData";
 import AddToCart from "./AddToCart";
+import CheckInStock from "./CheckInStock";
 import RemoveFromCart from "./RemoveFromCart";
 
 function ProductShow({ match }) {
-	// const [product, setProduct] = useState('');
-
-	// useEffect(() => {
-	//     const productURL = (id) => {
-	//         return `/products/${id}`
-	//     }
-	//     const id = match.params.product_id;
-
-	//     async function fetchProduct () {
-	//     const response = await axios.get(productURL(id));
-	//     // productObj = response.data;
-	//     setProduct(response.data);
-	//     }
-	//     fetchProduct();
-	// }, []);
-
-	// if (!product) {
-	//     return null;
-	// }
 
 	// @ts-ignore
 	const { product_id } = useParams();
@@ -48,8 +30,8 @@ function ProductShow({ match }) {
 			<p>Color: {color}</p>
 			<p>Style: {style}</p>
 			<ul>Categories: {showCategories}</ul>
-			<AddToCart product={product} />
-			<RemoveFromCart product={product} />
+			
+			<CheckInStock product={product}/>
 		</>
 	);
 }

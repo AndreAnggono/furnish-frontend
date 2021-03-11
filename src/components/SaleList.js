@@ -7,7 +7,8 @@ export class SaleList extends Component {
 		super(props);
 
 		this.state = {
-			products: []
+			sales: [],
+			total: 0
 		};
 	}
 
@@ -17,11 +18,59 @@ export class SaleList extends Component {
 
 	async getSales() {
 		await axios.get(`${SALES}/${this.props.user.id}`).then((res) => {
-			console.log(res);
 			this.setState({
-				products: res.data
+				sales: res.data
 			});
 		});
+
+		let totalPrice = 0;
+
+		for (let sale of this.state.sales) {
+			for (let product of sale.products) {
+				totalPrice += product.price;
+			}
+		}
+
+		this.setState({
+			total: totalPrice
+		});
+	}
+
+	formatDate(date) {
+		const purchasedDate = new Date(date).getDate();
+		const purchasedMonth = new Date(date).getMonth();
+		const purchasedYear = new Date(date).getFullYear();
+
+		return `${purchasedDate}/${purchasedMonth}/${purchasedYear}`;
+	}
+
+	formatProducts(p) {
+		const products = p.map((product) => (
+			<ul>
+				<li>{product.item.name}</li>
+			</ul>
+		));
+		return products;
+	}
+
+	formatQty(q) {
+		const products = q.map((product) => (
+			<ul>
+				<li className="nobullet">{product.qty}</li>
+			</ul>
+		));
+		return products;
+	}
+
+	formatPrice(p) {
+		const products = p.map((product) => {
+			return (
+				<ul>
+					<li className="nobullet">${product.price / 100}</li>
+				</ul>
+			);
+		});
+		return products;
 	}
 
 	render() {
@@ -31,19 +80,28 @@ export class SaleList extends Component {
 				<table>
 					<thead>
 						<tr>
-							<th>Purchased Date</th>
+							<th>Date</th>
 							<th>Products</th>
+							<th>Qty</th>
+							<th>Price</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td></td>
-						</tr>
+						{this.state.sales.map((s) => (
+							<tr>
+								<td>{this.formatDate(s.saleDate)}</td>
+								<td>{this.formatProducts(s.products)}</td>
+								<td>{this.formatQty(s.products)}</td>
+								<td>{this.formatPrice(s.products)}</td>
+							</tr>
+						))}
 					</tbody>
 					<tfoot>
 						<tr>
-							<td>Total</td>
-							<td>$</td>
+							<td colSpan={3} id="profile-total">
+								Total
+							</td>
+							<td colSpan={1}>${this.state.total}</td>
 						</tr>
 					</tfoot>
 				</table>

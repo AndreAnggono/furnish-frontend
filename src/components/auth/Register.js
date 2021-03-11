@@ -137,7 +137,7 @@ export class Register extends Component {
 	render() {
 		return (
 			<div style={{ marginLeft: "30%" }}>
-				<h1>Registration</h1>
+				<h1 style={{ marginLeft: "-77%" }}>Registration</h1>
 				{this.renderErrors()}
 				<form onSubmit={this.handleSubmit}>
 					<div>

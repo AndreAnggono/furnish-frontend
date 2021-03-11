@@ -86,6 +86,7 @@ export class Login extends Component {
 		return (
 			<div style={{ marginLeft: "30%" }}>
 				{this.renderErrors()}
+				<h1 style={{ marginLeft: "-89%" }}>Login</h1>
 				<form onSubmit={this.handleSubmit}>
 					<input type="email" name="email" placeholder="youremail@mail.com" value={this.state.email} onChange={this.handleChange} />
 					<input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />

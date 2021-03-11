@@ -30,16 +30,11 @@ const stripePromise = loadStripe("pk_test_51IQkAPA74VPmdiQEYANYUSHAGYpGzebZ4QPFa
 
 function App(props) {
 	const [status, setStatus] = useState("");
-	// const [userId, setUserId] = useState("");
 	const [user, setUser] = useState("");
 
 	const isLoggedIn = () => {
 		axios.get(LOGGED_IN, { withCredentials: true }).then((res) => {
 			setStatus(res.data.status);
-
-			// if ( res.data.user ) {
-			// 	setUserId(res.data.user.id)
-			// }
 			setUser(res.data.user);
 		});
 	};

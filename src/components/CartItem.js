@@ -13,6 +13,7 @@ function CartItem({cartItem}) {
             <img src={cartItem.image} alt="" className="product__image-thumbnail" />
             <p>Price: ${cartItem.price} x {cartItem.quantity} </p>
             <p>Color: {cartItem.color}</p>
+            <p>In stock ({cartItem.qty}) </p>
             <div>
                 <input
                     type="number"

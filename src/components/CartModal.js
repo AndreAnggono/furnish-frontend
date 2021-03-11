@@ -18,23 +18,34 @@ function CartModal({isOpen, toggleModal, user}) {
         <CartItem key={cartItem.id} cartItem={cartItem} />
     ))
 
+    const _onSubmit = (event) => {
+        event.preventDefault();
+    }
+
+    const _onClick = (event) => {
+        event.preventDefault();
+        
+    }
+
     return(
         <Modal isOpen={isOpen}
             onRequestClose={toggleModal}
             contentLabel="Cart Modal" 
             closeTimeoutMS={500}
         >
-            <div>
-                Cart Summary: ${totalPrice} ({cartCount} Items)
-            </div>
+            <form onSubmit={_onSubmit}>
+                <div>
+                    Cart Summary: ${totalPrice} ({cartCount} Items)
+                </div>
 
-            <hr />
-            {showCartItems}
-            
-            <CheckoutCart user={user}/>
-            <button onClick={toggleModal}>
-                Still Shopping
-            </button>
+                <hr />
+                {showCartItems}
+
+                <CheckoutCart user={user} />
+                <button onClick={toggleModal}>
+                    Still Shopping
+                </button>
+            </form>
              
         </Modal>
     )

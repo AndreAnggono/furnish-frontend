@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { REGISTER } from "../../config/serverData";
+import { USERS } from "../../config/serverData";
 import axios from "axios";
 import "../../css/andre.css";
 
@@ -33,7 +33,7 @@ export class Register extends Component {
 
 		axios
 			.post(
-				REGISTER,
+				USERS,
 				{
 					firstName,
 					lastName,

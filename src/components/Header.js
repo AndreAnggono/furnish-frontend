@@ -13,6 +13,9 @@ function Header(props) {
 
 	const logout = () => {
 		axios.delete(LOGOUT, { withCredentials: true }).then((res) => {
+			if (window.location.pathname === "/profile") {
+				history.push("/");
+			}
 			props.setStatus(res.data.status);
 		});
 	};
@@ -43,9 +46,10 @@ function Header(props) {
 				<nav className="user-nav">
 					<CartSummary />
 
-					<CheckoutCart 
-// @ts-ignore
-					user={props.user} />
+					<CheckoutCart
+						// @ts-ignore
+						user={props.user}
+					/>
 
 					<div className="user-nav__icon-box">
 						<svg className="user-nav__icon" onClick={redirToProfile}>

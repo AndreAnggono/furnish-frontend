@@ -25,20 +25,60 @@ function SuccessCheckout () {
     const {cartDetails} = useShoppingCart();
     
     console.log(cartDetails);
-  
+    // let productsToSave = [];
+    // // [{productId, qty, price}];
+    // const productArray = Object.keys(cartDetails).map(key => cartDetails[key]);
+
+    // productArray.map(product => {
+        
+    // })
+        
+    // console.log('productArray', productArray);
+
+    
+    // const [userId, setUserId] = useState("");
+    // const userData = async () => {
+	// 	const response = await axios.get(LOGGED_IN, { withCredentials: true });
+    //     return response;
+	// };
+    
+    // useEffect(() => {
+        
+    //     // console.log((await userData()).data.user.id);
+    //     createSale();
+    //     console.log("CREATESALE");
+    // }, []);
+
+    // const item = [ { 'item': '60441d848c6160745255c49d', 'qty': '2', 'price': '15' } ]
+    // const createSale = () => {
+    //     axios.post(ROOT + '/create-sale', {
+    //         'user': '60445ca0e38b037e44248754', item
+    //     })
+    // }
+
     if (isLoading) return <h1>Loading...</h1>
 
     if (!data && !isLoading) return <h1>No purchase found.</h1>
 
     if (isError) return <h1>Error loading page</h1>
 
+    const {customer_details, amount_total} = data.checkoutSession;
     
+    const items = 
+        data.productDetails.map(item => 
+            <div key={item.id}>  
+                <h2>{item.name}</h2>
+                <p>{item.description}</p>
+                <img src={item.images[0]} className="product__image-thumbnail"/>
+            </div>
+        )
 
     return(
         <>
             <h1>Thank you for purchasing</h1>
-            <p>Email: {data.checkoutSession.customer_details.email}</p>
-            <p>Order total: ${data.checkoutSession.amount_total / 100}</p>
+            <p>Email: {customer_details.email}</p>
+            <p>Order total: ${amount_total / 100}</p>
+            {items}
         </>
     )
 }

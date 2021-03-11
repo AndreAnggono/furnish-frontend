@@ -38,7 +38,7 @@ function CartModal({isOpen, toggleModal, user}) {
                         <CheckoutCart content={"Checkout now"} user={user} />
                     </div>
                     
-                    <button className="btn btn__black" style={{borderRadius: '5px', width: '30rem'}} onClick={toggleModal}>
+                    <button className="btn btn__black" style={{width: '30rem'}} onClick={toggleModal}>
                         Still Shopping
                     </button>
                 </div>

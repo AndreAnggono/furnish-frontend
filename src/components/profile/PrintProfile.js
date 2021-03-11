@@ -15,7 +15,7 @@ const PrintProfile = (props) => {
 					  } ${user.address.state ? user.address.state : ""}`
 					: ""}
 			</p>
-			<button onClick={props.handleClick}>Edit Profile</button>
+			<button className="btn btn__black" onClick={props.handleClick}>Edit Profile</button>
 		</div>
 	);
 };

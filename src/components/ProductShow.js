@@ -22,16 +22,19 @@ function ProductShow({ match }) {
 
 	return (
 		<>
-			<h1>{name}</h1>
+			<h1 style={{fontSize: '4rem', textTransform: 'uppercase'}}>{name}</h1>
 			<img className="product__image" src={image} alt="" />
-
-			<p>Description: {description}</p>
-			<p>Price: ${price}</p>
-			<p>Color: {color}</p>
-			<p>Style: {style}</p>
-			<ul>Categories: {showCategories}</ul>
+			<div style={{marginLeft: '10rem', padding: 'auto'}}>
+				<p className="product__price" style={{fontSize: '3rem'}}>${price}</p>
+				<CheckInStock product={product}/>
+				<p> Description: {description}</p>
+				
+				<p>Color: {color}</p>
+				<p>Style: {style}</p>
+				<ul>Categories: {showCategories}</ul>
+				
+			</div>
 			
-			<CheckInStock product={product}/>
 		</>
 	);
 }

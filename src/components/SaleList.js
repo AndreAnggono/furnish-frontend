@@ -26,7 +26,7 @@ export class SaleList extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="form__login" style={{marginTop: '4rem'}}>
 				<h3>Your Purchase History</h3>
 				<table>
 					<thead>

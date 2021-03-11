@@ -202,16 +202,20 @@ body {
   margin-top: 10rem;
   min-height: 100vh; }
 
+.content {
+  display: block;
+  min-height: 100vh; }
+
 .container {
   margin-top: 7.5rem;
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 0.1rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-  min-height: 90vh; }
+  min-height: 100%; }
 
 .banner {
   background-color: #333;
-  grid-column: full-start / col-end 6;
+  grid-column: full-start / full-end;
   background-image: linear-gradient(rgba(250, 249, 249, 0.2), rgba(244, 242, 242, 0.2)), url(../css/shelf.png);
   background-size: cover;
   background-position: center;
@@ -222,12 +226,6 @@ body {
   grid-template-columns: minmax(min-content, max-content);
   grid-row-gap: 1.5rem;
   justify-content: center; }
-  @media only screen and (max-width: 50em) {
-    .banner {
-      grid-column: 1 / -1; } }
-  @media only screen and (max-width: 37.5em) {
-    .banner {
-      padding: 5rem; } }
   .banner__logo {
     height: 3rem;
     justify-self: center; }
@@ -268,7 +266,6 @@ body {
       align-items: start; } }
 
 .feature {
-  float: left;
   width: 33.3333%;
   margin-bottom: 6rem;
   display: grid;
@@ -283,15 +280,15 @@ body {
     fill: #176d83;
     width: 4.5rem;
     height: 4.5rem;
-    grid-row: 1 / span 2;
-    transform: translateY(-1rem); }
+    grid-row: 1 / span 2; }
   .feature__text {
     font-size: 1.7rem; }
 
 .footer {
   background-color: #333;
   grid-column: full-start / full-end;
-  padding: 4rem; }
+  padding: 4rem;
+  margin-top: 60vh; }
 
 .nav {
   list-style: none;
@@ -483,7 +480,6 @@ body {
   grid-row: 1 / -1; }
 
 .realtors {
-  background-color: #9ccdd8;
   grid-column: col-start 7 / full-end;
   padding: 3rem;
   display: grid;
@@ -555,11 +551,10 @@ a {
   overflow: hidden;
   padding: 1rem 2rem;
   text-align: center;
-  margin: 0.3rem; }
+  margin: 0.3rem;
+  margin-top: 1rem; }
   .btn__green {
-    background-color: #068a06;
-    border: 4px solid #068a06;
-    border-radius: 5%; }
+    background-color: #068a06; }
   .btn__blue {
     background-color: #176d83;
     color: #fff; }
@@ -592,7 +587,7 @@ a {
     background-color: #faf9f9;
     height: 100%;
     font-family: "Raleway", sans-serif;
-    line-height: 1.6;
+    width: 7rem;
     font-size: 1.7rem; }
   .btn__checkout:hover {
     background-color: #f4f2f2; }
@@ -603,6 +598,15 @@ a {
   .btn:focus {
     outline: none;
     animation: pulsate 1s infinite; }
+
+.form__login {
+  margin: 0 auto;
+  margin-left: 35%; }
+
+.form__input {
+  height: 3rem;
+  width: 20rem;
+  margin: 0.3rem; }
 
 h1 {
   text-align: center;

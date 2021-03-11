@@ -51,7 +51,9 @@ function Header(props) {
 							// @ts-ignore
 							user={props.user}
 						/>
-					</div> 
+					</div>
+						
+				
 
 					<div className="user-nav__icon-box">
 						<svg className="user-nav__icon" onClick={redirToProfile}>

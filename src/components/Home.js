@@ -3,74 +3,81 @@ import React from "react";
 function Home() {
 	return (
 		<div className="container">
-			{/* <h1>WELCOME TO FURNIQUE</h1> */}
-			{/* <a href="/products"><img src="../img/shelf.png" alt="Photo of a shelf" className="product__image-large align-left "/>
-			See all products
-			</a> */}
 
 			<div className="sidebar">
 			</div>
 
 			<div className="banner">
-				<a href="/products">See all products</a>
+				<div className='realtors'>
+					<a href="/products"><button className="btn btn__black">See all products</button></a>
+					<a href="/livingroom"><button className="btn btn__black">See Living room products</button></a>
+					<a href="/diningroom"><button className="btn btn__black">See Dining room products</button></a>
+				</div>
+				
 			</div>
 
 			<section className="features">
 			<div className="feature">
                 <svg className="feature__icon">
-                    <use xlinkHref="img/sprite.svg#icon-global"></use>
+                    <use xlinkHref="img/sprite.svg#icon-leaf"></use>
                 </svg>
                 <h4 className="heading-4 heading-4--dark">Environmental friendly</h4>
-                <p className="feature__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur distinctio necessitatibus pariatur voluptatibus.</p>
+                <p className="feature__text">We value the Earth by providing energy-saving solutions.</p>
             </div>
 
             <div className="feature">
                 <svg className="feature__icon">
-                    <use xlinkHref="img/sprite.svg#icon-trophy"></use>
+                    <use xlinkHref="img/sprite.svg#icon-truck"></use>
                 </svg>
                 <h4 className="heading-4 heading-4--dark">Fastest delivery</h4>
-                <p className="feature__text">Voluptatum mollitia quae. Vero ipsum sapiente molestias accusamus rerum sed a eligendi aut quia.</p>
+                <p className="feature__text">Our products will be delivered within 3 working days no matter where you are.*</p>
             </div>
 
             <div className="feature">
                 <svg className="feature__icon">
-                    <use xlinkHref="img/sprite.svg#icon-map-pin"></use>
+                    <use xlinkHref="img/sprite.svg#icon-home"></use>
                 </svg>
                 <h4 className="heading-4 heading-4--dark">All homes can be a smart home</h4>
-                <p className="feature__text">Tenetur distinctio necessitatibus pariatur voluptatibus quidem consequatur harum.</p>
+                <p className="feature__text">That's where our futures are.</p>
             </div>
 
             <div className="feature">
                 <svg className="feature__icon">
-                    <use xlinkHref="img/sprite.svg#icon-key"></use>
+                    <use xlinkHref="img/sprite.svg#icon-coin-dollar"></use>
                 </svg>
                 <h4 className="heading-4 heading-4--dark">365 days of refund for mind-changing</h4>
-                <p className="feature__text">Vero ipsum sapiente molestias accusamus rerum. Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p className="feature__text">You don't have to worry about making wrong decisions.</p>
             </div>
 
             <div className="feature">
                 <svg className="feature__icon">
-                    <use xlinkHref="img/sprite.svg#icon-presentation"></use>
+                    <use xlinkHref="img/sprite.svg#icon-stats-dots"></use>
                 </svg>
                 <h4 className="heading-4 heading-4--dark">Top sales in 2020</h4>
-                <p className="feature__text">Quidem consequatur harum, voluptatum mollitia quae. Tenetur distinctio necessitatibus pariatur voluptatibus.</p>
+                <p className="feature__text">Thanks to our customers' love for Furniques.</p>
             </div>
 
             <div className="feature">
                 <svg className="feature__icon">
-                    <use xlinkHref="img/sprite.svg#icon-lock"></use>
+                    <use xlinkHref="img/sprite.svg#icon-tools"></use>
                 </svg>
                 <h4 className="heading-4 heading-4--dark">Easy to assemble</h4>
-                <p className="feature__text">Pariatur voluptatibus quidem consequatur harum, voluptatum mollitia quae.</p>
+                <p className="feature__text">No professionals needed.</p>
             </div>
 			</section>
 
 			<div className="story__pictures">
-				Furnique story picture
+				
 			</div>
 
 			<div className="story__content">
-				Furnique Story
+				<svg className="feature__icon" style={{marginLeft: -60}}>
+                    <use xlinkHref="img/sprite.svg#icon-quote"></use>
+                </svg>
+			  		<i>We write the story by our own story...</i>
+				<svg className="feature__icon" style={{marginLeft: -10}}>
+                    <use xlinkHref="img/sprite.svg#icon-quote"></use>
+                </svg>
 			</div>
 
 		</div>

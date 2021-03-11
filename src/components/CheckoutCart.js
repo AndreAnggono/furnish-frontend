@@ -6,7 +6,6 @@ import useCheckout from '../utils/useCheckout';
 
 function CheckoutCart({user, content}) {
     const {cartCount, cartDetails} = useShoppingCart();
-    console.log(cartDetails);
     let history = useHistory();
     const _handleCheckout = useCheckout(user);
 
@@ -21,7 +20,6 @@ function CheckoutCart({user, content}) {
             Object.keys(cartDetails).forEach(key => {
                 const item = cartDetails[key];
                 if (item.qty < item.quantity) {
-                    console.log("item.qty", item.qty, "item.quantity", item.quantity);
                     toast.error(`Not enough stock for item ${item.name} (${item.qty} in stock)`);
                     allInStock = false;
                 } 
@@ -29,7 +27,6 @@ function CheckoutCart({user, content}) {
             if (allInStock === true) {
                 setInStock(true);
             }
-    
 	    }
     }
 
@@ -40,7 +37,6 @@ function CheckoutCart({user, content}) {
 
     const checkReady = () => {
         if (inStock === true && user) {
-            console.log("CHEKCED");
             _handleCheckout();
         } else if (!user) {
             redirectToLogin();
@@ -57,7 +53,7 @@ function CheckoutCart({user, content}) {
         }} 
             disabled={!cartCount}
             className="btn__checkout">
-            
+            {content}
             <svg className="user-nav__icon">
                 <use xlinkHref="../../img/sprite.svg#icon-export"></use> 
             </svg>

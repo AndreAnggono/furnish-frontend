@@ -557,7 +557,9 @@ a {
   text-align: center;
   margin: 0.3rem; }
   .btn__green {
-    border: 4px solid #068a06; }
+    background-color: #068a06;
+    border: 4px solid #068a06;
+    border-radius: 5%; }
   .btn__blue {
     background-color: #176d83;
     color: #fff; }

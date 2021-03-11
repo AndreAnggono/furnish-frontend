@@ -11,8 +11,9 @@
   margin: 0.3rem;
 
   &__green {
-    // background-color: rgb(6, 138, 6);
+    background-color: rgb(6, 138, 6);
     border: 4px solid rgb(6, 138, 6);
+    border-radius: 5%;
   }
 
   &__blue {

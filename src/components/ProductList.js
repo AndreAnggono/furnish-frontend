@@ -56,7 +56,6 @@ function ProductList({history}) {
             <h1>All Products</h1>
             <div className="product__body">
                 {productList}
-                {productList}
             </div>
         </div>
         

@@ -33,7 +33,7 @@ function CartModal({isOpen, toggleModal, user}) {
 
                 <hr />
                 {showCartItems}
-                <button className="btn__green"> <CheckoutCart user={user} /> </button>
+                <button className="btn__green"> <CheckoutCart content={"Checkout now"} user={user} /> </button>
                 <button onClick={toggleModal}>
                     Still Shopping
                 </button>

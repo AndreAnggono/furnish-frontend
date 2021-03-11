@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Component } from "react";
 import EditProfile from "./EditProfile";
 import PrintProfile from "./PrintProfile";
+import SaleList from "../SaleList";
 
 export class UserShow extends Component {
 	constructor(props) {
@@ -48,6 +49,7 @@ export class UserShow extends Component {
 				) : (
 					<PrintProfile user={this.state.user} handleClick={this.editProfile} />
 				)}
+				<SaleList user={this.state.user} />
 			</>
 		);
 	}

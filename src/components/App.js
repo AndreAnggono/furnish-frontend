@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import dotenv from "dotenv";
 import { QueryClientProvider, QueryClient } from "react-query";
+import { Helmet } from "react-helmet";
 import axios from "axios";
 
 import Header from "./Header";
@@ -46,13 +47,18 @@ function App(props) {
 
 	return (
 		<>
+			<Helmet>
+				<meta charSet="utf-8" />
+				<title>Furnique</title>
+				<link rel="shortcut icon" href="/img/favicon.ico" />
+			</Helmet>
 			<QueryClientProvider client={queryClient}>
 				<CartProvider mode="checkout-session" stripe={stripePromise} currency="AUD">
 					<BrowserRouter>
 						<Header {...props} status={status} setStatus={setStatus} user={user} />
 						<Toaster position="top-left" />
 						<Sidebar />
-						<div className='content'>
+						<div className="content">
 							<Switch>
 								<Route exact path="/" component={() => <Home />} />
 
@@ -93,7 +99,7 @@ function App(props) {
 
 								<Route exact path="/profile" component={(props) => <UserShow {...props} user={user} status={status} />} />
 							</Switch>
-							<Footer/>
+							<Footer />
 						</div>
 					</BrowserRouter>
 				</CartProvider>

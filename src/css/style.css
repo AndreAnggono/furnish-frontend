@@ -3,11 +3,12 @@
 .header {
   font-size: 1.8rem;
   height: 7.5rem;
-  background-color: #faf9f9;
+  background-color: #fff;
   border-bottom: #f4f2f2;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   position: fixed;
   top: 0;
   left: 0;

@@ -60,7 +60,7 @@ export class Login extends Component {
 	}
 
 	redirectIfLoggedIn() {
-		if (this.state.status === "LOGGED_IN") this.props.history.push("/");
+		if (this.state.status === "LOGGED_IN") this.props.history.goBack();
 	}
 
 	renderErrors() {

@@ -35,7 +35,7 @@ function CartModal({isOpen, toggleModal, user}) {
                 {showCartItems}
                 <div style={{textAlign: 'center'}}>
                     <div className="btn btn__green" style={{width: '30rem', margin: '0 auto'}}>
-                        <CheckoutCart content={"Checkout now"} user={user} />
+                        <CheckoutCart content={"Checkout now"} user={user} toggleModal={toggleModal} />
                     </div>
                     
                     <button className="btn btn__black" style={{width: '30rem'}} onClick={toggleModal}>

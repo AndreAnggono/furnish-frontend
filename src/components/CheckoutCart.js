@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useShoppingCart } from "use-shopping-cart";
 import useCheckout from "../utils/useCheckout";
 
-function CheckoutCart({ user, content }) {
+function CheckoutCart({ user, content, toggleModal }) {
 	const { cartCount, cartDetails } = useShoppingCart();
 	let history = useHistory();
 	const _handleCheckout = useCheckout(user);
@@ -32,6 +32,7 @@ function CheckoutCart({ user, content }) {
 
 	const redirectToLogin = () => {
 		toast.loading("Please Sign In/Sign Up before checkout", { duration: 1600 });
+		toggleModal();
 		history.push("/login");
 	};
 
@@ -54,6 +55,7 @@ function CheckoutCart({ user, content }) {
 			}}
 			disabled={!cartCount}
 			className="btn__checkout user-nav__icon"
+			style={{color: 'white'}} 
 		>
 			{content}
 			<svg className="user-nav__icon">
